@@ -3,7 +3,7 @@
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="login.jsf" id="d1">
         <af:form id="f1">
-            <af:inputText value="#{loginBean.username}" label="Username"/>
+            <af:inputText value="#{loginBean.email}" label="Email"/>
             <af:inputText value="#{loginBean.password}" label="Password" secret="true"/>
             <af:commandButton text="Login" action="#{viewScope.loginBean.login}"/>
         </af:form>

@@ -3,8 +3,9 @@
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="register.jsf" id="d1">
         <af:form id="f1">
-            <af:inputText value="#{registerBean.username}" label="Username"/>
+            <af:inputText value="#{registerBean.email}" label="Email"/>
             <af:inputText value="#{registerBean.password}" label="Password" secret="true"/>
+            <af:inputText value="#{registerBean.confirm_password}" label="Confirm Password" secret="true"/>
             <af:commandButton text="Register" action="#{registerBean.register}"/>
         </af:form>
     </af:document>

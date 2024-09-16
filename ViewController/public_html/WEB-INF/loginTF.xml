@@ -2,9 +2,6 @@
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="loginTF">
     <default-activity>login</default-activity>
-    <data-control-scope>
-      <shared/>
-    </data-control-scope>
     <view id="login">
       <page>/login.jsf</page>
     </view>
@@ -32,6 +29,5 @@
         <to-activity-id>customer_dashboard</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
-    <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>
