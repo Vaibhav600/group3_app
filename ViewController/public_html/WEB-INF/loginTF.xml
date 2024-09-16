@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="loginTF">
+    <default-activity>login</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="login">
+      <page>/login.jsf</page>
+    </view>
+    <view id="customer_dashboard">
+      <page>/customer_dashboard.jsf</page>
+    </view>
+    <view id="owner_dashboard">
+      <page>/owner_dashboard.jsf</page>
+    </view>
+    <view id="super_admin_dashboard">
+      <page>/super_admin_dashboard.jsf</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>login</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>goToSuperAdminDashboard</from-outcome>
+        <to-activity-id>super_admin_dashboard</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>goToOwnerDashboard</from-outcome>
+        <to-activity-id>owner_dashboard</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>goToCustomerDashboard</from-outcome>
+        <to-activity-id>customer_dashboard</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
