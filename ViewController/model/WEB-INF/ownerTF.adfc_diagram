@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">owner_dashboard</property>
+      <property
+         name="x">247.70898</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>owner_dashboard&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">292.83594</property>
+      <property
+         name="page">/ownerDashboard.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+</SDM>
