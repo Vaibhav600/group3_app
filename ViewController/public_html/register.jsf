@@ -6,7 +6,7 @@
             <af:inputText value="#{registerBean.email}" label="Email"/>
             <af:inputText value="#{registerBean.password}" label="Password" secret="true"/>
             <af:inputText value="#{registerBean.confirm_password}" label="Confirm Password" secret="true"/>
-            <af:commandButton text="Register" action="#{registerBean.register}"/>
+            <af:commandButton text="Register" action="#{registerBean.registerUser}"/>
         </af:form>
     </af:document>
 </f:view>

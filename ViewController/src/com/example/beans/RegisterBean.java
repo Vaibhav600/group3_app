@@ -35,7 +35,6 @@ public class RegisterBean {
         if (bindingContext != null) {
             DCBindingContainer bindings = (DCBindingContainer) bindingContext.getCurrentBindingsEntry();
             DCDataControl dataControl = bindings.getDataControl();
-            System.out.println("datacontrol");
             ApplicationModule am = (ApplicationModule)dataControl.getDataProvider();
            return am;
         } 
@@ -46,11 +45,15 @@ public class RegisterBean {
     }
     public void createUser(ApplicationModule am, ViewObject vo, String email, String encrypted_password) {
         Row newUserRow = vo.createRow();
-        newUserRow.setAttribute("password", encrypted_password);
-        newUserRow.setAttribute("email", email);
-        newUserRow.setAttribute("role", default_role);
+        newUserRow.setAttribute("Password", encrypted_password);
+        newUserRow.setAttribute("Email", email);
+        newUserRow.setAttribute("Role", default_role);
         vo.insertRow(newUserRow);
-        am.getTransaction().commit();
+        try{
+            am.getTransaction().commit();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
     }
     private String encryptPassword(String password) {
         try {
@@ -65,7 +68,7 @@ public class RegisterBean {
         if(password.equals(confirm_password)){
             String encryptedPassword = encryptPassword(password);
             ApplicationModule am = getApplicationModule();
-            
+
             if (am != null) {
                 ViewObject vo = am.findViewObject(usersVO_name);
                 createUser(am, vo, email, encryptedPassword);
@@ -79,5 +82,29 @@ public class RegisterBean {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Password Doesn't Match"));
             return constants.getError_page_navigation();
         }
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setConfirm_password(String confirm_password) {
+        this.confirm_password = confirm_password;
+    }
+
+    public String getConfirm_password() {
+        return confirm_password;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

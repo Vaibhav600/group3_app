@@ -5,7 +5,7 @@
         <af:form id="f1">
             <af:inputText value="#{loginBean.email}" label="Email"/>
             <af:inputText value="#{loginBean.password}" label="Password" secret="true"/>
-            <af:commandButton text="Login" action="#{viewScope.loginBean.login}"/>
+            <af:commandButton text="Login" action="#{loginBean.loginUser}"/>
         </af:form>
     </af:document>
 </f:view>

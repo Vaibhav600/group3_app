@@ -37,11 +37,9 @@ public class LoginBean {
             if (bindingContext != null) {
         DCBindingContainer bindings = (DCBindingContainer) bindingContext.getCurrentBindingsEntry();
         DCDataControl dataControl = bindings.getDataControl();
-        System.out.println("datacontrol");
         ApplicationModule am = (ApplicationModule)dataControl.getDataProvider();
            return am;
         } else {
-            // Log or handle the case where BindingContext is null
             System.out.println("BindingContext is null");
         }
         return null;
@@ -59,16 +57,16 @@ public class LoginBean {
         try {
             ApplicationModule am = getApplicationModule();
             ViewObject usersVO = am.findViewObject(usersVO_name);
-            usersVO.setWhereClause("email = :email");
-            usersVO.defineNamedWhereClauseParam("email", null, null);
-            usersVO.setNamedWhereClauseParam("email", email);
+            usersVO.setWhereClause("Email = :Email");
+            usersVO.defineNamedWhereClauseParam("Email", null, null);
+            usersVO.setNamedWhereClauseParam("Email", email);
             usersVO.executeQuery();
             
             if (usersVO.getEstimatedRowCount() == 1) {
                 Row userRow = usersVO.first();
-                String storedPassword = (String) userRow.getAttribute("password");
+                String storedPassword = (String) userRow.getAttribute("Password");
                 if (storedPassword.equals(encryptPassword(password))) {
-                    String role = (String) userRow.getAttribute("role");
+                    String role = (String) userRow.getAttribute("Role");
                     if(role.equals("owner")) {
                         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Owner Login Success"));
                         return constants.getOwner_navigation();
@@ -98,5 +96,21 @@ public class LoginBean {
             System.out.println(e);
             return null;
         }
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }
