@@ -1,3 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <metadata-resource id="__1">/WEB-INF/superAdminTF.xml</metadata-resource>
 </adfc-config>

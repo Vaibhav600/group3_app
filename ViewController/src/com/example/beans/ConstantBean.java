@@ -7,9 +7,9 @@ import javax.faces.bean.ManagedBean;
 @ApplicationScoped
 @ManagedBean(name="constantBean")
 public class ConstantBean {
-    private String super_admin_navigation = "goToSuperAdminDashboard";
-    private String owner_navigation = "goToOwnerDashboard";
-    private String customer_navigation = "goToCustomerDashboard";
+    private String super_admin_navigation = "goToSuperAdmin";
+    private String owner_navigation = "goToOwner";
+    private String customer_navigation = "goToCustomer";
     private String login_page_navigation = "goToLogin";
     private String error_page_navigation = "goToError";
 
