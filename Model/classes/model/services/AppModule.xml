@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="G3UsersVO"
+    ViewObjectName="model.services.views.G3UsersVO"/>
+  <ViewUsage
+    Name="G3RestaurantsVO"
+    ViewObjectName="model.services.views.G3RestaurantsVO"/>
+  <ViewUsage
+    Name="OrderForRestaurant"
+    ViewObjectName="model.services.views.G3OrdersVO"/>
+  <ViewUsage
+    Name="ReservationsForRestaurant"
+    ViewObjectName="model.services.views.G3ReservationsVO"/>
+  <ViewUsage
+    Name="RestaurantForUser"
+    ViewObjectName="model.services.views.G3RestaurantsVO"/>
+  <ViewLinkUsage
+    Name="OrderRestaurantViewLink"
+    ViewLinkObjectName="model.services.link.OrderRestaurantViewLink"
+    SrcViewUsageName="model.services.AppModule.G3RestaurantsVO"
+    DstViewUsageName="model.services.AppModule.OrderForRestaurant"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ReservationRestaurantViewLink1"
+    ViewLinkObjectName="model.services.link.ReservationRestaurantViewLink"
+    SrcViewUsageName="model.services.AppModule.G3RestaurantsVO"
+    DstViewUsageName="model.services.AppModule.ReservationsForRestaurant"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="RestaurantUserViewLink"
+    ViewLinkObjectName="model.services.link.RestaurantUserViewLink"
+    SrcViewUsageName="model.services.AppModule.G3UsersVO"
+    DstViewUsageName="model.services.AppModule.RestaurantForUser"
+    Reversed="false"/>
+</AppModule>

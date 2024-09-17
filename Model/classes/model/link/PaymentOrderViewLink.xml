@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PaymentOrderViewLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <ViewLinkDefEnd
+    Name="G3OrdersVO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.views.G3OrdersVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="G3OrdersVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.views.G3OrdersVO.OrderId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="G3PaymentsVO"
+    Cardinality="1"
+    Owner="model.views.G3PaymentsVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="G3PaymentsVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.views.G3PaymentsVO.OrderId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

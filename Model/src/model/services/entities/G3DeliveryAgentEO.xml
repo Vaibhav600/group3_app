@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="G3DeliveryAgentEO"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="G3_DELIVERY_AGENT"
+  AliasName="G3DeliveryAgentEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="AgentId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="AGENT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="G3_DELIVERY_AGENT"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Name"
+    Precision="100"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_DELIVERY_AGENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Phone"
+    Precision="10"
+    Scale="0"
+    ColumnName="PHONE"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="G3_DELIVERY_AGENT"/>
+  <Attribute
+    Name="IsAvailable"
+    Precision="10"
+    ColumnName="IS_AVAILABLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_DELIVERY_AGENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedAt"
+    ColumnName="CREATED_AT"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="G3_DELIVERY_AGENT"/>
+  <Attribute
+    Name="UpdatedAt"
+    ColumnName="UPDATED_AT"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="G3_DELIVERY_AGENT"/>
+  <AccessorAttribute
+    Name="G3OrdersEO"
+    Association="model.services.assoc.OrderDeliveryAgentAssoc"
+    AssociationEnd="model.services.assoc.OrderDeliveryAgentAssoc.G3OrdersEO"
+    AssociationOtherEnd="model.services.assoc.OrderDeliveryAgentAssoc.G3DeliveryAgentEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SysC009722468"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C009722468"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.services.entities.G3DeliveryAgentEO.AgentId"/>
+    </AttrArray>
+  </Key>
+</Entity>

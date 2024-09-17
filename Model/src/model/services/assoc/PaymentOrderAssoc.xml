@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+    Name="PaymentOrderAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+    <DesignTime>
+        <Attr Name="_isCodegen" Value="true"/>
+    </DesignTime>
+    <AssociationEnd
+      Name="G3OrdersEO"
+      Cardinality="1"
+      Source="true"
+        Owner="model.services.entities.G3OrdersEO">
+        <DesignTime>
+            <Attr Name="_isUpdateable" Value="true"/>
+            <Attr Name="_aggregation" Value="0"/>
+            <Attr Name="_finderName" Value="G3OrdersEO"/>
+            <Attr Name="_foreignKey" Value="model.services.entities.G3OrdersEO.SysC009722469"/>
+        </DesignTime>
+        <AttrArray Name="Attributes">
+            <Item Value="model.services.entities.G3OrdersEO.OrderId"/>
+        </AttrArray>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="G3PaymentsEO"
+      Cardinality="1"
+        Owner="model.services.entities.G3PaymentsEO">
+        <DesignTime>
+            <Attr Name="_isUpdateable" Value="true"/>
+            <Attr Name="_aggregation" Value="0"/>
+            <Attr Name="_finderName" Value="G3PaymentsEO"/>
+            <Attr Name="_foreignKey" Value="model.services.entities.G3PaymentsEO.SysC009722483"/>
+        </DesignTime>
+        <AttrArray Name="Attributes">
+            <Item Value="model.services.entities.G3PaymentsEO.OrderId"/>
+        </AttrArray>
+    </AssociationEnd>
+</Association>

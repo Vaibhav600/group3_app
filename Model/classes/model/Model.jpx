@@ -9,11 +9,19 @@
   PackageName="model">
   <DesignTime>
     <Attr Name="_DTExpressionTypeChecking" Value="true"/>
+    <Attr Name="_appModuleNames0" Value="model.services.AppModule"/>
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_jprName" Value="../../Model.jpr"/>
     <Attr Name="_NamedConnection" Value="oracle"/>
-    <Attr Name="_appModuleNames0" Value="model.AppModule"/>
   </DesignTime>
+  <Containee
+    Name="assoc"
+    PackageName="model.assoc"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
   <Containee
     Name="entities"
     PackageName="model.entities"
@@ -23,11 +31,55 @@
     </DesignTime>
   </Containee>
   <Containee
+    Name="link"
+    PackageName="model.link"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="model"
     PackageName="model"
+    ObjectType="JboPackage"/>
+  <Containee
+    Name="assoc"
+    PackageName="model.services.assoc"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="entities"
+    PackageName="model.services.entities"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="link"
+    PackageName="model.services.link"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="services"
+    PackageName="model.services"
     ObjectType="JboPackage">
     <DesignTime>
       <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="views"
+    PackageName="model.services.views"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
     </DesignTime>
   </Containee>
   <Containee

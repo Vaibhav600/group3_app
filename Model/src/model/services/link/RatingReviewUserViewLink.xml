@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="RatingReviewUserViewLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.services.link.RatingReviewUserViewLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="G3UsersVO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.services.views.G3UsersVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="G3UsersVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.services.views.G3UsersVO.UserId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="G3RatingsReviewsVO"
+    Cardinality="-1"
+    Owner="model.services.views.G3RatingsReviewsVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="G3RatingsReviewsVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.services.views.G3RatingsReviewsVO.CustomerId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.services.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

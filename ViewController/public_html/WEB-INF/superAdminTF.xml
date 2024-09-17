@@ -10,6 +10,7 @@
     </view>
     <view id="editRestaurant">
       <page>/editRestaurant.jsf</page>
+      <input-page-parameter id="__11"></input-page-parameter>
     </view>
     <view id="addRestaurant">
       <page>/addRestaurant.jsf</page>

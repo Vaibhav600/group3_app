@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="G3UsersEO"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="G3_USERS"
+  AliasName="G3UsersEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="UserId"
+    ColumnName="USER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="G3_USERS"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"/>
+  <Attribute
+    Name="FullName"
+    Precision="100"
+    ColumnName="FULL_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="100"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Phone"
+    Precision="15"
+    ColumnName="PHONE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Password"
+    IsNotNull="true"
+    Precision="260"
+    ColumnName="PASSWORD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Address"
+    Precision="255"
+    ColumnName="ADDRESS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Role"
+    Precision="15"
+    ColumnName="ROLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedAt"
+    ColumnName="CREATED_AT"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="G3_USERS"/>
+  <Attribute
+    Name="UpdatedAt"
+    ColumnName="UPDATED_AT"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="G3_USERS"/>
+  <AccessorAttribute
+    Name="G3RestaurantsEO"
+    Association="model.services.assoc.RestaurantUserAssoc"
+    AssociationEnd="model.services.assoc.RestaurantUserAssoc.G3RestaurantsEO"
+    AssociationOtherEnd="model.services.assoc.RestaurantUserAssoc.G3UsersEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="G3OrdersEO"
+    Association="model.services.assoc.OrderUserAssoc"
+    AssociationEnd="model.services.assoc.OrderUserAssoc.G3OrdersEO"
+    AssociationOtherEnd="model.services.assoc.OrderUserAssoc.G3UsersEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="G3FeedbackEO"
+    Association="model.services.assoc.FeedbackUserAssoc"
+    AssociationEnd="model.services.assoc.FeedbackUserAssoc.G3FeedbackEO"
+    AssociationOtherEnd="model.services.assoc.FeedbackUserAssoc.G3UsersEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="G3RatingsReviewsEO"
+    Association="model.services.assoc.RatingReviewUserAssoc"
+    AssociationEnd="model.services.assoc.RatingReviewUserAssoc.G3RatingsReviewsEO"
+    AssociationOtherEnd="model.services.assoc.RatingReviewUserAssoc.G3UsersEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="G3ReservationsEO"
+    Association="model.services.assoc.ReservationUserAssoc"
+    AssociationEnd="model.services.assoc.ReservationUserAssoc.G3ReservationsEO"
+    AssociationOtherEnd="model.services.assoc.ReservationUserAssoc.G3UsersEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SysC009722378">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="role IN ('customer', 'owner', 'super_admin')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C009722378"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC009722379"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C009722379"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.services.entities.G3UsersEO.UserId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC009722380">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C009722380"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.services.entities.G3UsersEO.Email"/>
+    </AttrArray>
+  </Key>
+</Entity>

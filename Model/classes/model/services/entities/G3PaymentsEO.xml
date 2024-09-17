@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="G3PaymentsEO"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="G3_PAYMENTS"
+  AliasName="G3PaymentsEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="PaymentId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="PAYMENT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="G3_PAYMENTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="OrderId"
+    Precision="10"
+    Scale="0"
+    ColumnName="ORDER_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="G3_PAYMENTS"/>
+  <Attribute
+    Name="PaymentMethod"
+    Precision="50"
+    ColumnName="PAYMENT_METHOD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_PAYMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Amount"
+    ColumnName="AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="G3_PAYMENTS"/>
+  <Attribute
+    Name="Status"
+    Precision="50"
+    ColumnName="STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_PAYMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedAt"
+    ColumnName="CREATED_AT"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="G3_PAYMENTS"/>
+  <Attribute
+    Name="UpdatedAt"
+    ColumnName="UPDATED_AT"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="G3_PAYMENTS"/>
+  <Attribute
+    Name="CardNo"
+    Precision="19"
+    ColumnName="CARD_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_PAYMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="19"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CardHolderName"
+    Precision="255"
+    ColumnName="CARD_HOLDER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_PAYMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Cvv"
+    Precision="4"
+    ColumnName="CVV"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_PAYMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UpiId"
+    Precision="100"
+    ColumnName="UPI_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_PAYMENTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="G3OrdersEO"
+    Association="model.services.assoc.PaymentOrderAssoc"
+    AssociationEnd="model.services.assoc.PaymentOrderAssoc.G3OrdersEO"
+    AssociationOtherEnd="model.services.assoc.PaymentOrderAssoc.G3PaymentsEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SysC009722482"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C009722482"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.services.entities.G3PaymentsEO.PaymentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC009722483">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C009722469"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C009722483"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.services.entities.G3PaymentsEO.OrderId"/>
+    </AttrArray>
+  </Key>
+</Entity>

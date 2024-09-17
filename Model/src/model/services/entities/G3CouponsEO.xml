@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="G3CouponsEO"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="G3_COUPONS"
+  AliasName="G3CouponsEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="CouponId"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="COUPON_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="G3_COUPONS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="RestaurantId"
+    Precision="10"
+    Scale="0"
+    ColumnName="RESTAURANT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="G3_COUPONS"/>
+  <Attribute
+    Name="Description"
+    Precision="500"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="G3_COUPONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DiscountPercentage"
+    ColumnName="DISCOUNT_PERCENTAGE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="G3_COUPONS"/>
+  <Attribute
+    Name="ValidFrom"
+    ColumnName="VALID_FROM"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="G3_COUPONS"/>
+  <Attribute
+    Name="ValidTo"
+    ColumnName="VALID_TO"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="G3_COUPONS"/>
+  <Attribute
+    Name="CreatedAt"
+    ColumnName="CREATED_AT"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="G3_COUPONS"/>
+  <Attribute
+    Name="UpdatedAt"
+    ColumnName="UPDATED_AT"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="G3_COUPONS"/>
+  <AccessorAttribute
+    Name="G3RestaurantsEO"
+    Association="model.services.assoc.CouponRestaurantAssoc"
+    AssociationEnd="model.services.assoc.CouponRestaurantAssoc.G3RestaurantsEO"
+    AssociationOtherEnd="model.services.assoc.CouponRestaurantAssoc.G3CouponsEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="G3OrdersEO"
+    Association="model.services.assoc.OrderCouponAssoc"
+    AssociationEnd="model.services.assoc.OrderCouponAssoc.G3OrdersEO"
+    AssociationOtherEnd="model.services.assoc.OrderCouponAssoc.G3CouponsEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SysC009722466"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C009722466"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.services.entities.G3CouponsEO.CouponId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC009722467">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_C009722464"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SYS_C009722467"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.services.entities.G3CouponsEO.RestaurantId"/>
+    </AttrArray>
+  </Key>
+</Entity>
