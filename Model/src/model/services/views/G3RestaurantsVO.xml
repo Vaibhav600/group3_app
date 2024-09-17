@@ -13,6 +13,30 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="UsersLOV"
+    ViewObjectName="model.services.views.G3UsersVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="G3UsersVO"
+    ViewObjectName="model.services.views.G3UsersVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_OwnerId"
+    ListVOName="G3UsersVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OwnerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="UserId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="G3RestaurantsEO"
     Entity="model.services.entities.G3RestaurantsEO"/>
@@ -22,13 +46,22 @@
     PrecisionRule="true"
     EntityAttrName="RestaurantId"
     EntityUsage="G3RestaurantsEO"
-    AliasName="RESTAURANT_ID"/>
+    AliasName="RESTAURANT_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="OwnerId"
     PrecisionRule="true"
     EntityAttrName="OwnerId"
     EntityUsage="G3RestaurantsEO"
-    AliasName="OWNER_ID"/>
+    AliasName="OWNER_ID"
+    LOVName="LOV_OwnerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Name"
     PrecisionRule="true"

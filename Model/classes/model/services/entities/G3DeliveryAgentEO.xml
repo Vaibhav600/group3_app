@@ -12,15 +12,18 @@
   BindingStyle="OracleName">
   <Attribute
     Name="AgentId"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="AGENT_ID"
     SQLType="NUMERIC"
-    Type="java.lang.Long"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="G3_DELIVERY_AGENT"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="Name"
     Precision="100"

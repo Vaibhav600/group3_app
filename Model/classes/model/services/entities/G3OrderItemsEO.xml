@@ -12,15 +12,18 @@
   BindingStyle="OracleName">
   <Attribute
     Name="Id"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="ID"
     SQLType="NUMERIC"
-    Type="java.lang.Long"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="G3_ORDER_ITEMS"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="OrderId"
     Precision="10"

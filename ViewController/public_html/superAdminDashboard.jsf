@@ -7,7 +7,7 @@
         <af:messages id="m1"/>
         <af:form id="f1">
             <af:toolbar id="t1">
-                <af:button text="#{viewcontrollerBundle.ADD_RESTAURANT}" id="b1"/>
+                <af:button text="#{viewcontrollerBundle.ADD_RESTAURANT}" id="b1" action="goToAddRestaurant"/>
             </af:toolbar>
             <af:panelBox text="#{viewcontrollerBundle.RESTAURANTS}" id="pb1">
                 <f:facet name="toolbar"/>

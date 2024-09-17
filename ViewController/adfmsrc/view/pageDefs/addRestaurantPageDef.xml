@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="addRestaurantPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.Long" Name="CreateWithParams_RestaurantId" IsQueriable="false"/>
+      <variable Type="java.math.BigDecimal" Name="CreateWithParams1_OwnerId" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="CreateWithParams2_Name" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="CreateWithParams3_Address" IsQueriable="false"/>
+      <variable Type="java.lang.Long" Name="CreateWithParams4_Phone" IsQueriable="false"/>
+      <variable Type="java.math.BigDecimal" Name="CreateWithParams5_AvailableSeats" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="CreateWithParams6_Status" IsQueriable="false"/>
+      <variable Type="java.sql.Timestamp" Name="CreateWithParams7_CreatedAt" IsQueriable="false"/>
+      <variable Type="java.sql.Timestamp" Name="CreateWithParams8_UpdatedAt" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="G3RestaurantsVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3RestaurantsVOIterator"/>
+    <iterator Binds="G3UsersVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3UsersVOIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="G3RestaurantsVOIterator" id="CreateWithParams" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="RestaurantId" NDValue="${bindings.CreateWithParams_RestaurantId}" NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="variables" id="RestaurantId">
+      <AttrNames>
+        <Item Value="CreateWithParams_RestaurantId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="G3RestaurantsVOIterator" id="CreateWithParams1" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="OwnerId" NDValue="${bindings.CreateWithParams1_OwnerId}" NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="variables" id="OwnerId">
+      <AttrNames>
+        <Item Value="CreateWithParams1_OwnerId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="G3RestaurantsVOIterator" id="CreateWithParams2" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="Name" NDValue="${bindings.CreateWithParams2_Name}" NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="variables" id="Name">
+      <AttrNames>
+        <Item Value="CreateWithParams2_Name"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="G3RestaurantsVOIterator" id="CreateWithParams3" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="Address" NDValue="${bindings.CreateWithParams3_Address}" NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="variables" id="Address">
+      <AttrNames>
+        <Item Value="CreateWithParams3_Address"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="G3RestaurantsVOIterator" id="CreateWithParams4" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="Phone" NDValue="${bindings.CreateWithParams4_Phone}" NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="variables" id="Phone">
+      <AttrNames>
+        <Item Value="CreateWithParams4_Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="G3RestaurantsVOIterator" id="CreateWithParams5" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="AvailableSeats" NDValue="${bindings.CreateWithParams5_AvailableSeats}"
+                 NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="variables" id="AvailableSeats">
+      <AttrNames>
+        <Item Value="CreateWithParams5_AvailableSeats"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="G3RestaurantsVOIterator" id="CreateWithParams6" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="Status" NDValue="${bindings.CreateWithParams6_Status}" NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="variables" id="Status">
+      <AttrNames>
+        <Item Value="CreateWithParams6_Status"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="G3RestaurantsVOIterator" id="CreateWithParams7" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="CreatedAt" NDValue="${bindings.CreateWithParams7_CreatedAt}" NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="variables" id="CreatedAt">
+      <AttrNames>
+        <Item Value="CreateWithParams7_CreatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="G3RestaurantsVOIterator" id="CreateWithParams8" RequiresUpdateModel="true"
+            Action="createWithParams">
+      <NamedData NDName="UpdatedAt" NDValue="${bindings.CreateWithParams8_UpdatedAt}" NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="variables" id="UpdatedAt">
+      <AttrNames>
+        <Item Value="CreateWithParams8_UpdatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="G3RestaurantsVOIterator" id="CreateWithParams9" RequiresUpdateModel="true"
+            Action="createWithParams"/>
+    <action IterBinding="G3RestaurantsVOIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <list IterBinding="G3UsersVOIterator" ListOperMode="navigation" ListIter="G3UsersVOIterator" id="G3UsersVO"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="FullName"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="Name1">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="G3RestaurantsVOIterator" StaticList="false" Uses="LOV_OwnerId" id="OwnerId1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="Phone1">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="AvailableSeats1">
+      <AttrNames>
+        <Item Value="AvailableSeats"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="Address1">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="Status1">
+      <AttrNames>
+        <Item Value="Status"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

@@ -12,15 +12,18 @@
   BindingStyle="OracleName">
   <Attribute
     Name="ReservationId"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="RESERVATION_ID"
     SQLType="NUMERIC"
-    Type="java.lang.Long"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="G3_RESERVATIONS"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="CustomerId"
     ColumnName="CUSTOMER_ID"

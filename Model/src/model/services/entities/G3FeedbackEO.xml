@@ -12,15 +12,18 @@
   BindingStyle="OracleName">
   <Attribute
     Name="FeedbackId"
-    IsNotNull="true"
     Precision="10"
     Scale="0"
     ColumnName="FEEDBACK_ID"
     SQLType="NUMERIC"
-    Type="java.lang.Long"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="G3_FEEDBACK"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"/>
   <Attribute
     Name="CustomerId"
     ColumnName="CUSTOMER_ID"
@@ -75,6 +78,13 @@
     Association="model.services.assoc.FeedbackRestaurantAssoc"
     AssociationEnd="model.services.assoc.FeedbackRestaurantAssoc.G3RestaurantsEO"
     AssociationOtherEnd="model.services.assoc.FeedbackRestaurantAssoc.G3FeedbackEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="G3UsersEO"
+    Association="model.services.assoc.FeedbackUserAssoc"
+    AssociationEnd="model.services.assoc.FeedbackUserAssoc.G3UsersEO"
+    AssociationOtherEnd="model.services.assoc.FeedbackUserAssoc.G3FeedbackEO"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <Key
