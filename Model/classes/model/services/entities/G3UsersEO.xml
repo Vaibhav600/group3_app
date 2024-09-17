@@ -112,13 +112,6 @@
     ColumnType="TIMESTAMP"
     TableName="G3_USERS"/>
   <AccessorAttribute
-    Name="G3RestaurantsEO"
-    Association="model.services.assoc.RestaurantUserAssoc"
-    AssociationEnd="model.services.assoc.RestaurantUserAssoc.G3RestaurantsEO"
-    AssociationOtherEnd="model.services.assoc.RestaurantUserAssoc.G3UsersEO"
-    Type="oracle.jbo.server.EntityImpl"
-    IsUpdateable="true"/>
-  <AccessorAttribute
     Name="G3OrdersEO"
     Association="model.services.assoc.OrderUserAssoc"
     AssociationEnd="model.services.assoc.OrderUserAssoc.G3OrdersEO"
@@ -144,6 +137,13 @@
     Association="model.services.assoc.ReservationUserAssoc"
     AssociationEnd="model.services.assoc.ReservationUserAssoc.G3ReservationsEO"
     AssociationOtherEnd="model.services.assoc.ReservationUserAssoc.G3UsersEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="G3RestaurantsEO"
+    Association="model.services.assoc.RestaurantUserAssoc"
+    AssociationEnd="model.services.assoc.RestaurantUserAssoc.G3RestaurantsEO"
+    AssociationOtherEnd="model.services.assoc.RestaurantUserAssoc.G3UsersEO"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

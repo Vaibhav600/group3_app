@@ -29,7 +29,7 @@
     DstViewUsageName="model.services.AppModule.OrderForRestaurant"
     Reversed="false"/>
   <ViewLinkUsage
-    Name="ReservationRestaurantViewLink1"
+    Name="ReservationRestaurantViewLink"
     ViewLinkObjectName="model.services.link.ReservationRestaurantViewLink"
     SrcViewUsageName="model.services.AppModule.G3RestaurantsVO"
     DstViewUsageName="model.services.AppModule.ReservationsForRestaurant"

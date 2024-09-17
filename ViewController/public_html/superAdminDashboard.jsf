@@ -5,7 +5,12 @@
     <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle']}"/>
     <af:document title="super_admin_dashboard.jsf" id="d1">
         <af:form id="f1">
-            <af:message id="m1" message="#{viewcontrollerBundle.SUPER_ADMIN_DASHBOARD}"/>
+            <af:toolbar id="t1">
+                <af:button text="#{viewcontrollerBundle.ADD_RESTAURANT}" id="b1"/>
+            </af:toolbar>
+            <af:panelBox text="#{viewcontrollerBundle.RESTAURANTS}" id="pb1">
+                <f:facet name="toolbar"/>
+            </af:panelBox>
         </af:form>
     </af:document>
 </f:view>

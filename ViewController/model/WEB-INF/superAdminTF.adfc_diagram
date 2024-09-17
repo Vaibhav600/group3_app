@@ -72,7 +72,7 @@
       <property
          name="fromOutcome">goToEditRestaurant</property>
       <property
-         name="sdm:polyPoints">T50,273.9287,185.23438,475.0,57.402344,L50</property>
+         name="sdm:polyPoints">T44,270.4287,181.38934,472.98904,53.902344,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
