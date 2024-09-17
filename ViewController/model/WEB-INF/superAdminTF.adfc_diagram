@@ -54,11 +54,11 @@
       <property
          name="activityId">restaurantDetails</property>
       <property
-         name="x">504.0</property>
+         name="x">657.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>restaurantDetails&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">418.46875</property>
+         name="y">414.20312</property>
       <property
          name="page">/restaurantDetails.jsf</property>
       <property
@@ -86,26 +86,6 @@
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase9"
-      from="View3"
-      to="View6">
-      <property
-         name="fromOutcome">goToRestaurantDetails</property>
-      <property
-         name="sdm:polyPoints">B44,270.4287,296.99564,460.91922,421.90234,L54</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase10"
-      from="View6"
-      to="View3">
-      <property
-         name="fromOutcome">goToSuperAdminDashboard</property>
-      <property
-         name="sdm:polyPoints">L46,463.0,414.90234,277.4287,293.23438,B56</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
       id="ControlFlowCase11"
       from="View5"
       to="View3">
@@ -123,5 +103,63 @@
          name="fromOutcome">goToSuperAdminDashboard</property>
       <property
          name="sdm:polyPoints">L54,475.0,60.902344,277.4287,185.23438,T56</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall13">
+      <property
+         name="activityId">ExecuteWithParams</property>
+      <property
+         name="x">385.55176</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">414.30078</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase14"
+      from="View3"
+      to="MethodCall13">
+      <property
+         name="fromOutcome">goToRestaurantDetails</property>
+      <property
+         name="sdm:polyPoints">B50,273.9287,293.23438,385.55176,360.23438,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase15"
+      from="MethodCall13"
+      to="View6">
+      <property
+         name="fromOutcome">ExecuteWithParams</property>
+      <property
+         name="sdm:polyPoints">R50,426.55176,414.23438,616.0,414.13672,L50</property>
+   </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn18">
+      <property
+         name="activityId">backToSuperAdmin</property>
+      <property
+         name="x">873.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>backToSuperAdmin&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  Back&lt;/p></property>
+      <property
+         name="y">412.46875</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase19"
+      from="View6"
+      to="TaskFlowReturn18">
+      <property
+         name="fromOutcome">*</property>
+      <property
+         name="sdm:polyPoints">R50,698.0,414.13672,832.0,412.40234,L50</property>
    </ControlFlowCase>
 </SDM>

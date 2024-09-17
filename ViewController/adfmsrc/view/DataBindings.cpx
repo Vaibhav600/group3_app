@@ -4,10 +4,18 @@
   <pageMap>
     <page path="/login.jsf" usageId="view_loginPageDef"/>
     <page path="/register.jsf" usageId="view_registerPageDef"/>
+    <page path="/superAdminDashboard.jsf" usageId="view_superAdminDashboardPageDef"/>
+    <page path="/WEB-INF/superAdminTF.xml#superAdminTF@ExecuteWithParams"
+          usageId="view_superAdminTF_superAdminTF_ExecuteWithParamsPageDef"/>
+    <page path="/restaurantDetails.jsf" usageId="view_restaurantDetailsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_loginPageDef" path="view.pageDefs.loginPageDef"/>
     <page id="view_registerPageDef" path="view.pageDefs.registerPageDef"/>
+    <page id="view_superAdminDashboardPageDef" path="view.pageDefs.superAdminDashboardPageDef"/>
+    <page id="view_superAdminTF_superAdminTF_ExecuteWithParamsPageDef"
+          path="view.pageDefs.superAdminTF_superAdminTF_ExecuteWithParamsPageDef"/>
+    <page id="view_restaurantDetailsPageDef" path="view.pageDefs.restaurantDetailsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.services"

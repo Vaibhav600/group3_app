@@ -4,12 +4,64 @@
         xmlns:c="http://java.sun.com/jsp/jstl/core">
     <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle']}"/>
     <af:document title="super_admin_dashboard.jsf" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:toolbar id="t1">
                 <af:button text="#{viewcontrollerBundle.ADD_RESTAURANT}" id="b1"/>
             </af:toolbar>
             <af:panelBox text="#{viewcontrollerBundle.RESTAURANTS}" id="pb1">
                 <f:facet name="toolbar"/>
+                <af:table value="#{bindings.G3RestaurantsVO.collectionModel}" var="row"
+                          rows="#{bindings.G3RestaurantsVO.rangeSize}"
+                          emptyText="#{bindings.G3RestaurantsVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.G3RestaurantsVO.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.G3RestaurantsVO.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.G3RestaurantsVO.rangeSize}" id="t2">
+                    <af:column sortProperty="#{bindings.G3RestaurantsVO.hints.RestaurantId.name}" sortable="true"
+                               headerText="#{bindings.G3RestaurantsVO.hints.RestaurantId.label}" id="c1">
+                        <af:link id="l1" action="goToRestaurantDetails">
+                            <af:outputText value="#{row.RestaurantId}"
+                                           shortDesc="#{bindings.G3RestaurantsVO.hints.RestaurantId.tooltip}" id="ot1">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.G3RestaurantsVO.hints.RestaurantId.format}"/>
+                            </af:outputText>
+                            <af:setPropertyListener from="#{row.RestaurantId}"
+                                                    to="#{pageFlowScope.selectedRestaurantId}" type="action"/>
+                        </af:link>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.G3RestaurantsVO.hints.Name.name}" sortable="true"
+                               headerText="#{bindings.G3RestaurantsVO.hints.Name.label}" id="c2">
+                        <af:outputText value="#{row.Name}" shortDesc="#{bindings.G3RestaurantsVO.hints.Name.tooltip}"
+                                       id="ot2"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.G3RestaurantsVO.hints.Address.name}" sortable="true"
+                               headerText="#{bindings.G3RestaurantsVO.hints.Address.label}" id="c3">
+                        <af:outputText value="#{row.Address}"
+                                       shortDesc="#{bindings.G3RestaurantsVO.hints.Address.tooltip}" id="ot3"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.G3RestaurantsVO.hints.AvailableSeats.name}" sortable="true"
+                               headerText="#{bindings.G3RestaurantsVO.hints.AvailableSeats.label}" id="c4">
+                        <af:outputText value="#{row.AvailableSeats}"
+                                       shortDesc="#{bindings.G3RestaurantsVO.hints.AvailableSeats.tooltip}" id="ot4">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.G3RestaurantsVO.hints.AvailableSeats.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.G3RestaurantsVO.hints.Phone.name}" sortable="true"
+                               headerText="#{bindings.G3RestaurantsVO.hints.Phone.label}" id="c5">
+                        <af:outputText value="#{row.Phone}" shortDesc="#{bindings.G3RestaurantsVO.hints.Phone.tooltip}"
+                                       id="ot5">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.G3RestaurantsVO.hints.Phone.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.G3RestaurantsVO.hints.Status.name}" sortable="true"
+                               headerText="#{bindings.G3RestaurantsVO.hints.Status.label}" id="c6">
+                        <af:outputText value="#{row.Status}"
+                                       shortDesc="#{bindings.G3RestaurantsVO.hints.Status.tooltip}" id="ot6"/>
+                    </af:column>
+                </af:table>
             </af:panelBox>
         </af:form>
     </af:document>

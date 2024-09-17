@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="restaurantDetailsPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="OrderForRestaurant" RangeSize="25" DataControl="AppModuleDataControl"
+              id="OrderForRestaurantIterator"/>
+    <searchRegion Binds="OrderForRestaurantIterator" Criteria="searchOrderByRestaurantIDVC"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="OrderForRestaurantQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="OrderForRestaurantIterator" id="OrderForRestaurant">
+      <nodeDefinition DefName="model.services.views.G3OrdersVO" Name="OrderForRestaurant0">
+        <AttrNames>
+          <Item Value="OrderId"/>
+          <Item Value="RestaurantId"/>
+          <Item Value="CustomerId"/>
+          <Item Value="DeliveryAgentId"/>
+          <Item Value="OrderStatus"/>
+          <Item Value="PaymentStatus"/>
+          <Item Value="CouponId"/>
+          <Item Value="TotalAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

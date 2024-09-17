@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="restaurantDetails.jsf" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:panelGridLayout id="pgl1">
                 <af:gridRow height="50px" id="gr1">
@@ -12,6 +13,132 @@
                 <af:gridRow height="100%" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
                         <!-- Content -->
+                        <af:table value="#{bindings.OrderForRestaurant.collectionModel}" var="row"
+                                  rows="#{bindings.OrderForRestaurant.rangeSize}"
+                                  emptyText="#{bindings.OrderForRestaurant.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.OrderForRestaurant.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.OrderForRestaurant.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.OrderForRestaurant.rangeSize}"
+                                  filterModel="#{bindings.OrderForRestaurantQuery.queryDescriptor}" filterVisible="false"
+                                  queryListener="#{bindings.OrderForRestaurantQuery.processQuery}" varStatus="vs"
+                                  id="t1">
+                            <af:column sortProperty="#{bindings.OrderForRestaurant.hints.OrderId.name}"
+                                       filterable="true" headerText="#{bindings.OrderForRestaurant.hints.OrderId.label}"
+                                       id="c1">
+                                <af:inputText value="#{row.bindings.OrderId.inputValue}"
+                                              label="#{bindings.OrderForRestaurant.hints.OrderId.label}"
+                                              required="#{bindings.OrderForRestaurant.hints.OrderId.mandatory}"
+                                              columns="#{bindings.OrderForRestaurant.hints.OrderId.displayWidth}"
+                                              maximumLength="#{bindings.OrderForRestaurant.hints.OrderId.precision}"
+                                              shortDesc="#{bindings.OrderForRestaurant.hints.OrderId.tooltip}" id="it1">
+                                    <f:validator binding="#{row.bindings.OrderId.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.OrderForRestaurant.hints.OrderId.format}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.OrderForRestaurant.hints.RestaurantId.name}"
+                                       filterable="true"
+                                       headerText="#{bindings.OrderForRestaurant.hints.RestaurantId.label}" id="c2">
+                                <af:inputText value="#{row.bindings.RestaurantId.inputValue}"
+                                              label="#{bindings.OrderForRestaurant.hints.RestaurantId.label}"
+                                              required="#{bindings.OrderForRestaurant.hints.RestaurantId.mandatory}"
+                                              columns="#{bindings.OrderForRestaurant.hints.RestaurantId.displayWidth}"
+                                              maximumLength="#{bindings.OrderForRestaurant.hints.RestaurantId.precision}"
+                                              shortDesc="#{bindings.OrderForRestaurant.hints.RestaurantId.tooltip}"
+                                              id="it2">
+                                    <f:validator binding="#{row.bindings.RestaurantId.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.OrderForRestaurant.hints.RestaurantId.format}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.OrderForRestaurant.hints.CustomerId.name}"
+                                       filterable="true"
+                                       headerText="#{bindings.OrderForRestaurant.hints.CustomerId.label}" id="c3">
+                                <af:inputText value="#{row.bindings.CustomerId.inputValue}"
+                                              label="#{bindings.OrderForRestaurant.hints.CustomerId.label}"
+                                              required="#{bindings.OrderForRestaurant.hints.CustomerId.mandatory}"
+                                              columns="#{bindings.OrderForRestaurant.hints.CustomerId.displayWidth}"
+                                              maximumLength="#{bindings.OrderForRestaurant.hints.CustomerId.precision}"
+                                              shortDesc="#{bindings.OrderForRestaurant.hints.CustomerId.tooltip}"
+                                              id="it3">
+                                    <f:validator binding="#{row.bindings.CustomerId.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.OrderForRestaurant.hints.CustomerId.format}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.OrderForRestaurant.hints.DeliveryAgentId.name}"
+                                       filterable="true"
+                                       headerText="#{bindings.OrderForRestaurant.hints.DeliveryAgentId.label}" id="c4">
+                                <af:inputText value="#{row.bindings.DeliveryAgentId.inputValue}"
+                                              label="#{bindings.OrderForRestaurant.hints.DeliveryAgentId.label}"
+                                              required="#{bindings.OrderForRestaurant.hints.DeliveryAgentId.mandatory}"
+                                              columns="#{bindings.OrderForRestaurant.hints.DeliveryAgentId.displayWidth}"
+                                              maximumLength="#{bindings.OrderForRestaurant.hints.DeliveryAgentId.precision}"
+                                              shortDesc="#{bindings.OrderForRestaurant.hints.DeliveryAgentId.tooltip}"
+                                              id="it4">
+                                    <f:validator binding="#{row.bindings.DeliveryAgentId.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.OrderForRestaurant.hints.DeliveryAgentId.format}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.OrderForRestaurant.hints.OrderStatus.name}"
+                                       filterable="true"
+                                       headerText="#{bindings.OrderForRestaurant.hints.OrderStatus.label}" id="c5">
+                                <af:inputText value="#{row.bindings.OrderStatus.inputValue}"
+                                              label="#{bindings.OrderForRestaurant.hints.OrderStatus.label}"
+                                              required="#{bindings.OrderForRestaurant.hints.OrderStatus.mandatory}"
+                                              columns="#{bindings.OrderForRestaurant.hints.OrderStatus.displayWidth}"
+                                              maximumLength="#{bindings.OrderForRestaurant.hints.OrderStatus.precision}"
+                                              shortDesc="#{bindings.OrderForRestaurant.hints.OrderStatus.tooltip}"
+                                              id="it5">
+                                    <f:validator binding="#{row.bindings.OrderStatus.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.OrderForRestaurant.hints.PaymentStatus.name}"
+                                       filterable="true"
+                                       headerText="#{bindings.OrderForRestaurant.hints.PaymentStatus.label}" id="c6">
+                                <af:inputText value="#{row.bindings.PaymentStatus.inputValue}"
+                                              label="#{bindings.OrderForRestaurant.hints.PaymentStatus.label}"
+                                              required="#{bindings.OrderForRestaurant.hints.PaymentStatus.mandatory}"
+                                              columns="#{bindings.OrderForRestaurant.hints.PaymentStatus.displayWidth}"
+                                              maximumLength="#{bindings.OrderForRestaurant.hints.PaymentStatus.precision}"
+                                              shortDesc="#{bindings.OrderForRestaurant.hints.PaymentStatus.tooltip}"
+                                              id="it6">
+                                    <f:validator binding="#{row.bindings.PaymentStatus.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.OrderForRestaurant.hints.CouponId.name}"
+                                       filterable="true"
+                                       headerText="#{bindings.OrderForRestaurant.hints.CouponId.label}" id="c7">
+                                <af:inputText value="#{row.bindings.CouponId.inputValue}"
+                                              label="#{bindings.OrderForRestaurant.hints.CouponId.label}"
+                                              required="#{bindings.OrderForRestaurant.hints.CouponId.mandatory}"
+                                              columns="#{bindings.OrderForRestaurant.hints.CouponId.displayWidth}"
+                                              maximumLength="#{bindings.OrderForRestaurant.hints.CouponId.precision}"
+                                              shortDesc="#{bindings.OrderForRestaurant.hints.CouponId.tooltip}"
+                                              id="it7">
+                                    <f:validator binding="#{row.bindings.CouponId.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.OrderForRestaurant.hints.CouponId.format}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.OrderForRestaurant.hints.TotalAmount.name}"
+                                       filterable="true"
+                                       headerText="#{bindings.OrderForRestaurant.hints.TotalAmount.label}" id="c8">
+                                <af:inputText value="#{row.bindings.TotalAmount.inputValue}"
+                                              label="#{bindings.OrderForRestaurant.hints.TotalAmount.label}"
+                                              required="#{bindings.OrderForRestaurant.hints.TotalAmount.mandatory}"
+                                              columns="#{bindings.OrderForRestaurant.hints.TotalAmount.displayWidth}"
+                                              maximumLength="#{bindings.OrderForRestaurant.hints.TotalAmount.precision}"
+                                              shortDesc="#{bindings.OrderForRestaurant.hints.TotalAmount.tooltip}"
+                                              id="it8">
+                                    <f:validator binding="#{row.bindings.TotalAmount.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.OrderForRestaurant.hints.TotalAmount.format}"/>
+                                </af:inputText>
+                            </af:column>
+                        </af:table>
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
