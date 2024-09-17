@@ -20,12 +20,6 @@
                                       shortDesc="#{bindings.Name1.hints.tooltip}" id="it1">
                             <f:validator binding="#{bindings.Name1.validator}"/>
                         </af:inputText>
-                        <af:selectOneChoice value="#{bindings.OwnerId1.inputValue}" label="#{bindings.OwnerId1.label}"
-                                            required="#{bindings.OwnerId1.hints.mandatory}"
-                                            shortDesc="#{bindings.OwnerId1.hints.tooltip}" id="soc1">
-                            <f:selectItems value="#{bindings.OwnerId1.items}" id="si1"/>
-                            <f:validator binding="#{bindings.OwnerId1.validator}"/>
-                        </af:selectOneChoice>
                         <af:inputText value="#{bindings.Phone1.inputValue}" label="#{bindings.Phone1.hints.label}"
                                       required="#{bindings.Phone1.hints.mandatory}"
                                       columns="#{bindings.Phone1.hints.displayWidth}"
@@ -57,6 +51,13 @@
                                       shortDesc="#{bindings.Status1.hints.tooltip}" id="it5">
                             <f:validator binding="#{bindings.Status1.validator}"/>
                         </af:inputText>
+                        <af:selectOneChoice value="#{bindings.t_owner_id.inputValue}"
+                                            label="#{bindings.t_owner_id.label}"
+                                            required="#{bindings.t_owner_id.hints.mandatory}"
+                                            shortDesc="#{bindings.t_owner_id.hints.tooltip}" id="soc1">
+                            <f:selectItems value="#{bindings.t_owner_id.items}" id="si1"/>
+                            <f:validator binding="#{bindings.t_owner_id.validator}"/>
+                        </af:selectOneChoice>
                         <af:button actionListener="#{bindings.Commit.execute}" text="Commit"
                                    disabled="#{!bindings.Commit.enabled}" id="b1"/>
                         <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"

@@ -3,8 +3,7 @@
                 Package="view.pageDefs">
   <parameters/>
   <executables>
-    <variableIterator id="variables"/>
-    <iterator Binds="OrderForRestaurant" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="OrderForRestaurant" RangeSize="-1" DataControl="AppModuleDataControl"
               id="OrderForRestaurantIterator"/>
     <searchRegion Binds="OrderForRestaurantIterator" Criteria="searchOrderByRestaurantIDVC"
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="OrderForRestaurantQuery"/>
@@ -24,5 +23,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="OrderForRestaurantIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="bRestaurantId" NDType="oracle.jbo.domain.Number"
+                 NDValue="${bindings.ExecuteWithParams_bRestaurantId}"/>
+    </action>
   </bindings>
 </pageDefinition>

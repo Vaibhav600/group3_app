@@ -15,7 +15,11 @@
     ViewObjectName="model.services.views.G3RestaurantsVO"/>
   <ViewUsage
     Name="OrderForRestaurant"
-    ViewObjectName="model.services.views.G3OrdersVO"/>
+    ViewObjectName="model.services.views.G3OrdersVO">
+    <ViewCriteriaUsage
+      Name="searchOrderByRestaurantIDVC"
+      FullName="model.services.views.G3OrdersVO.searchOrderByRestaurantIDVC"/>
+  </ViewUsage>
   <ViewUsage
     Name="ReservationsForRestaurant"
     ViewObjectName="model.services.views.G3ReservationsVO"/>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="untitled1PageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="G3UsersVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3UsersVOIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="G3UsersVOIterator" id="G3UsersVO">
+      <nodeDefinition DefName="model.services.views.G3UsersVO" Name="G3UsersVO0">
+        <AttrNames>
+          <Item Value="UserId"/>
+          <Item Value="FullName"/>
+          <Item Value="Email"/>
+          <Item Value="Phone"/>
+          <Item Value="Password"/>
+          <Item Value="Address"/>
+          <Item Value="Role"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="UpdatedAt"/>
+          <Item Value="t_owner_id"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

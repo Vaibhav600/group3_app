@@ -28,7 +28,7 @@
     Name="OwnerId"
     ColumnName="OWNER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="G3_RESTAURANTS"/>
   <Attribute

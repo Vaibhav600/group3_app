@@ -82,6 +82,15 @@
     EntityAttrName="UpdatedAt"
     EntityUsage="G3UsersEO"
     AliasName="UPDATED_AT"/>
+  <ViewAttribute
+    Name="t_owner_id"
+    IsQueriable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    EntityAttrName="t_owner_id"
+    EntityUsage="G3UsersEO"
+    AliasName="T_OWNER_ID"
+    Expression="TO_NUMBER(USER_ID)"/>
   <ViewLinkAccessor
     Name="G3RestaurantsVO"
     ViewLink="model.services.link.RestaurantUserViewLink"

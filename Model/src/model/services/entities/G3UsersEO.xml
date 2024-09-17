@@ -111,6 +111,20 @@
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
     TableName="G3_USERS"/>
+  <Attribute
+    Name="t_owner_id"
+    ColumnName="T_OWNER_ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INTEGER"
+    IsPersistent="false"
+    IsQueriable="false"
+    Expression="TO_NUMBER(USER_ID)">
+    <Dependencies>
+      <Item
+        Value="UserId"/>
+    </Dependencies>
+  </Attribute>
   <AccessorAttribute
     Name="G3OrdersEO"
     Association="model.services.assoc.OrderUserAssoc"

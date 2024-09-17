@@ -8,6 +8,8 @@
                 <af:gridRow height="50px" id="gr1">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                         <!-- Header -->
+                        <af:button actionListener="#{bindings.ExecuteWithParams.execute}" text="ExecuteWithParams"
+                                   disabled="#{!bindings.ExecuteWithParams.enabled}" id="b1"/>
                     </af:gridCell>
                 </af:gridRow>
                 <af:gridRow height="100%" id="gr2">
@@ -22,7 +24,7 @@
                                   rowSelection="single" fetchSize="#{bindings.OrderForRestaurant.rangeSize}"
                                   filterModel="#{bindings.OrderForRestaurantQuery.queryDescriptor}" filterVisible="false"
                                   queryListener="#{bindings.OrderForRestaurantQuery.processQuery}" varStatus="vs"
-                                  id="t1">
+                                  id="t1" partialTriggers="::b1">
                             <af:column sortProperty="#{bindings.OrderForRestaurant.hints.OrderId.name}"
                                        filterable="true" headerText="#{bindings.OrderForRestaurant.hints.OrderId.label}"
                                        id="c1">

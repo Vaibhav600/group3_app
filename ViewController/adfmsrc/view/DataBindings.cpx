@@ -9,6 +9,7 @@
           usageId="view_superAdminTF_superAdminTF_ExecuteWithParamsPageDef"/>
     <page path="/restaurantDetails.jsf" usageId="view_restaurantDetailsPageDef"/>
     <page path="/addRestaurant.jsf" usageId="view_addRestaurantPageDef"/>
+    <page path="/untitled1.jsf" usageId="view_untitled1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_loginPageDef" path="view.pageDefs.loginPageDef"/>
@@ -18,6 +19,7 @@
           path="view.pageDefs.superAdminTF_superAdminTF_ExecuteWithParamsPageDef"/>
     <page id="view_restaurantDetailsPageDef" path="view.pageDefs.restaurantDetailsPageDef"/>
     <page id="view_addRestaurantPageDef" path="view.pageDefs.addRestaurantPageDef"/>
+    <page id="view_untitled1PageDef" path="view.pageDefs.untitled1PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.services"

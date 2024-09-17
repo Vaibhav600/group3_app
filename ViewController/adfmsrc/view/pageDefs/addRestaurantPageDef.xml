@@ -15,7 +15,7 @@
       <variable Type="java.sql.Timestamp" Name="CreateWithParams8_UpdatedAt" IsQueriable="false"/>
     </variableIterator>
     <iterator Binds="G3RestaurantsVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3RestaurantsVOIterator"/>
-    <iterator Binds="G3UsersVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3UsersVOIterator"/>
+    <iterator Binds="G3UsersVO" RangeSize="-1" DataControl="AppModuleDataControl" id="G3UsersVOIterator"/>
   </executables>
   <bindings>
     <action IterBinding="G3RestaurantsVOIterator" id="CreateWithParams" RequiresUpdateModel="true"
@@ -115,8 +115,6 @@
         <Item Value="Name"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="G3RestaurantsVOIterator" StaticList="false" Uses="LOV_OwnerId" id="OwnerId1"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="G3RestaurantsVOIterator" id="Phone1">
       <AttrNames>
         <Item Value="Phone"/>
@@ -138,5 +136,17 @@
       </AttrNames>
     </attributeValues>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <list IterBinding="G3RestaurantsVOIterator" id="t_owner_id" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="G3UsersVOIterator">
+      <AttrNames>
+        <Item Value="OwnerId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="t_owner_id"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Email"/>
+      </ListDisplayAttrNames>
+    </list>
   </bindings>
 </pageDefinition>
