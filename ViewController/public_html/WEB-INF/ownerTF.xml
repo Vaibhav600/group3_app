@@ -8,5 +8,13 @@
     <view id="owner_dashboard">
       <page>/ownerDashboard.jsf</page>
     </view>
+    <view id="addCoupon"></view>
+    <control-flow-rule id="__1">
+      <from-activity-id>owner_dashboard</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>goToAddCoupon</from-outcome>
+        <to-activity-id>addCoupon</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
   </task-flow-definition>
 </adfc-config>

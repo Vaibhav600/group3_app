@@ -8,5 +8,50 @@
     <view id="superAdminDashboard">
       <page>/superAdminDashboard.jsf</page>
     </view>
+    <view id="editRestaurant">
+      <page>/editRestaurant.jsf</page>
+    </view>
+    <view id="addRestaurant">
+      <page>/addRestaurant.jsf</page>
+    </view>
+    <view id="restaurantDetails">
+      <page>/restaurantDetails.jsf</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>superAdminDashboard</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>goToEditRestaurant</from-outcome>
+        <to-activity-id>editRestaurant</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>goToAddRestaurant</from-outcome>
+        <to-activity-id>addRestaurant</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>goToRestaurantDetails</from-outcome>
+        <to-activity-id>restaurantDetails</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>restaurantDetails</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>goToSuperAdminDashboard</from-outcome>
+        <to-activity-id>superAdminDashboard</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>addRestaurant</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome>goToSuperAdminDashboard</from-outcome>
+        <to-activity-id>superAdminDashboard</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id>editRestaurant</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome>goToSuperAdminDashboard</from-outcome>
+        <to-activity-id>superAdminDashboard</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
   </task-flow-definition>
 </adfc-config>
