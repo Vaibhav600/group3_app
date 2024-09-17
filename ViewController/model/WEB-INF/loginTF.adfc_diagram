@@ -13,7 +13,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>login&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">390.57812</property>
+         name="y">390.3789</property>
       <property
          name="page">/login.jsf</property>
       <property
@@ -44,7 +44,7 @@
       <property
          name="fromOutcome">goToSuperAdmin</property>
       <property
-         name="sdm:polyPoints">R42,203.5,383.51172,512.3428,242.23438,L50</property>
+         name="sdm:polyPoints">R42,203.5,383.3125,512.3428,242.23438,L50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall15">
@@ -71,7 +71,7 @@
       <property
          name="fromOutcome">goToOwner</property>
       <property
-         name="sdm:polyPoints">R50,204.26628,390.51172,518.5,389.83594,L50</property>
+         name="sdm:polyPoints">R50,204.26419,390.3125,518.5,389.83594,L50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall17">
@@ -98,6 +98,6 @@
       <property
          name="fromOutcome">goToCustomer</property>
       <property
-         name="sdm:polyPoints">R58,203.5,397.51172,513.1953,533.10156,L50</property>
+         name="sdm:polyPoints">R58,203.5,397.3125,513.1953,533.10156,L50</property>
    </ControlFlowCase>
 </SDM>

@@ -13,7 +13,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>superAdminDashboard&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">239.30078</property>
+         name="y">239.10156</property>
       <property
          name="page">/superAdminDashboard.jsf</property>
       <property
@@ -82,7 +82,7 @@
       <property
          name="fromOutcome">goToAddRestaurant</property>
       <property
-         name="sdm:polyPoints">R46,314.9287,235.73438,566.9709,233.63672,L46</property>
+         name="sdm:polyPoints">R46,314.9287,235.53516,566.97363,233.63672,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -92,7 +92,7 @@
       <property
          name="fromOutcome">goToRestaurantDetails</property>
       <property
-         name="sdm:polyPoints">B44,270.4287,296.99564,460.91922,421.90234,L54</property>
+         name="sdm:polyPoints">B44,270.4287,296.79312,460.91638,421.90234,L54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -102,7 +102,7 @@
       <property
          name="fromOutcome">goToSuperAdminDashboard</property>
       <property
-         name="sdm:polyPoints">L46,463.0,414.90234,277.4287,293.23438,B56</property>
+         name="sdm:polyPoints">L46,463.0,414.90234,277.4287,293.03516,B56</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -112,7 +112,7 @@
       <property
          name="fromOutcome">goToSuperAdminDashboard</property>
       <property
-         name="sdm:polyPoints">L54,567.0,240.63672,314.95782,242.73438,R54</property>
+         name="sdm:polyPoints">L54,567.0,240.63672,314.95508,242.53516,R54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -122,6 +122,6 @@
       <property
          name="fromOutcome">goToSuperAdminDashboard</property>
       <property
-         name="sdm:polyPoints">L54,475.0,60.902344,277.4287,185.23438,T56</property>
+         name="sdm:polyPoints">L54,475.0,60.902344,277.4287,185.03516,T56</property>
    </ControlFlowCase>
 </SDM>

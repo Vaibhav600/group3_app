@@ -64,9 +64,12 @@ public class LoginBean {
             
             if (usersVO.getEstimatedRowCount() == 1) {
                 Row userRow = usersVO.first();
+                
                 String storedPassword = (String) userRow.getAttribute("Password");
                 if (storedPassword.equals(encryptPassword(password))) {
                     String role = (String) userRow.getAttribute("Role");
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userRole", role);
+                    //TODO: Remember to remove userRole key from session while logout
                     if(role.equals("owner")) {
                         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Owner Login Success"));
                         return constants.getOwner_navigation();

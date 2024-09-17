@@ -3,4 +3,7 @@
   <application>
     <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
   </application>
+  <!--<lifecycle>
+    <phase-listener>com.example.filters.AuthorizationPhaseListener</phase-listener>
+  </lifecycle>-->
 </faces-config>

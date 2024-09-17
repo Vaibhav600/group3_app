@@ -10,7 +10,7 @@
     <page id="view_registerPageDef" path="view.pageDefs.registerPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
-    <BC4JDataControl id="AppModuleDataControl" Package="model"
+    <BC4JDataControl id="AppModuleDataControl" Package="model.services"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
                      SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
