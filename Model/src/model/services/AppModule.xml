@@ -9,7 +9,11 @@
   ClearCacheOnRollback="true">
   <ViewUsage
     Name="G3UsersVO"
-    ViewObjectName="model.services.views.G3UsersVO"/>
+    ViewObjectName="model.services.views.G3UsersVO">
+    <ViewCriteriaUsage
+      Name="searchUserByIDViewCriteria"
+      FullName="model.services.views.G3UsersVO.searchUserByIDViewCriteria"/>
+  </ViewUsage>
   <ViewUsage
     Name="G3RestaurantsVO"
     ViewObjectName="model.services.views.G3RestaurantsVO"/>
@@ -32,6 +36,9 @@
   <ViewUsage
     Name="G3OrdersVO"
     ViewObjectName="model.services.views.G3OrdersVO"/>
+  <ViewUsage
+    Name="OrderForRestaurantForUser"
+    ViewObjectName="model.services.views.G3OrdersVO"/>
   <ViewLinkUsage
     Name="OrderRestaurantViewLink"
     ViewLinkObjectName="model.services.link.OrderRestaurantViewLink"
@@ -49,5 +56,11 @@
     ViewLinkObjectName="model.services.link.RestaurantUserViewLink"
     SrcViewUsageName="model.services.AppModule.G3UsersVO"
     DstViewUsageName="model.services.AppModule.RestaurantForUser"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="OrderForRestaurantForUserViewLink"
+    ViewLinkObjectName="model.services.link.OrderRestaurantViewLink"
+    SrcViewUsageName="model.services.AppModule.RestaurantForUser"
+    DstViewUsageName="model.services.AppModule.OrderForRestaurantForUser"
     Reversed="false"/>
 </AppModule>

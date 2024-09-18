@@ -1,0 +1,12 @@
+//Groovy Scripts for model.services.views.G3RestaurantsVO
+
+package model.services.views
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="CreatedAt")
+def CreatedAt_ExpressionScript_Expression()
+{
+adf.currentDate
+}
+
