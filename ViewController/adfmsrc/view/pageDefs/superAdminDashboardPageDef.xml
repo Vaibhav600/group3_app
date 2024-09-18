@@ -19,5 +19,53 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="G3RestaurantsVOIterator" id="setCurrentRowWithKey"
+            InstanceName="AppModuleDataControl.G3RestaurantsVO" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="false" Action="setCurrentRowWithKey">
+      <NamedData NDName="rowKey" NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="RestaurantId">
+      <AttrNames>
+        <Item Value="RestaurantId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="G3RestaurantsVOIterator" StaticList="false" Uses="LOV_OwnerId" id="OwnerId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="AvailableSeats">
+      <AttrNames>
+        <Item Value="AvailableSeats"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="Status">
+      <AttrNames>
+        <Item Value="Status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="CreatedAt">
+      <AttrNames>
+        <Item Value="CreatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="UpdatedAt">
+      <AttrNames>
+        <Item Value="UpdatedAt"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
   </bindings>
 </pageDefinition>
