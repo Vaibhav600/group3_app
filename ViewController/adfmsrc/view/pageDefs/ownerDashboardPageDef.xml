@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="ownerDashboardPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="G3OrdersVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3OrdersVOIterator"/>
+    <iterator Binds="G3DeliveryAgentVO" RangeSize="25" DataControl="AppModuleDataControl"
+              id="G3DeliveryAgentVOIterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="G3OrdersVOIterator" ListOperMode="navigation" ListIter="G3OrdersVOIterator" id="G3OrdersVO"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="OrderId"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="G3DeliveryAgentVOIterator" ListOperMode="navigation" ListIter="G3DeliveryAgentVOIterator"
+          id="G3DeliveryAgentVO" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="AgentId"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>

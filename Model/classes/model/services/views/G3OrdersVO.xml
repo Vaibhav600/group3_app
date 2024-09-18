@@ -17,6 +17,32 @@
     Name="bRestaurantId"
     Kind="viewcriteria"
     Type="oracle.jbo.domain.Number"/>
+  <Variable
+    Name="bOrderId"
+    Kind="viewcriteria"
+    Type="java.lang.Long"/>
+  <ViewAccessor
+    Name="G3OrdersVO"
+    ViewObjectName="model.services.views.G3OrdersVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_OrderId"
+    ListVOName="G3OrdersVO"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OrderId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="OrderId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="OrderId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="G3OrdersEO"
     Entity="model.services.entities.G3OrdersEO"/>
@@ -26,7 +52,16 @@
     PrecisionRule="true"
     EntityAttrName="OrderId"
     EntityUsage="G3OrdersEO"
-    AliasName="ORDER_ID"/>
+    AliasName="ORDER_ID"
+    IsUpdateable="while_insert"
+    LOVName="LOV_OrderId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="RestaurantId"
     PrecisionRule="true"
@@ -113,6 +148,42 @@
         Operator="="
         Conjunction="AND"
         Value=":bRestaurantId"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="getOrderByIDVC"
+    ViewObjectName="model.services.views.G3OrdersVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="G3OrdersVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="OrderId"
+        ViewAttribute="OrderId"
+        Operator="="
+        Conjunction="AND"
+        Value=":bOrderId"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>

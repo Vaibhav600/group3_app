@@ -4,8 +4,44 @@
         xmlns:c="http://java.sun.com/jsp/jstl/core">
     <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle']}"/>
     <af:document title="owner_dashboard.jsf" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
-            <af:message id="m1" message="#{viewcontrollerBundle.OWNER_DASHBOARD}"/>
+            <af:panelTabbed position="above" id="pt1">
+                <af:showDetailItem id="home" text="Home"/>
+                <af:showDetailItem id="menu" text="Menu"/>
+                <af:showDetailItem id="order_status" text="Order Status"/>
+                <af:showDetailItem id="reservation" text="Reservation"/>
+                <af:showDetailItem id="delivery_agent" text="Delivery Agent">
+                    <af:panelGridLayout id="pgl1">
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                            <af:gridCell marginStart="5px" width="34%" id="gc1">
+                                <af:selectOneChoice value="#{assignDeliveryAgent.order_id}"
+                                                    label="#{bindings.G3OrdersVO.label}"
+                                                    required="#{bindings.G3OrdersVO.hints.mandatory}"
+                                                    shortDesc="#{bindings.G3OrdersVO.hints.tooltip}" id="soc1">
+                                    <f:selectItems value="#{bindings.G3OrdersVO.items}" id="si1"/>
+                                    <f:validator binding="#{bindings.G3OrdersVO.validator}"/>
+                                </af:selectOneChoice>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="33%" id="gc2">
+                                <af:selectOneChoice value="#{assignDeliveryAgent.agent_id}"
+                                                    label="#{bindings.G3DeliveryAgentVO.label}"
+                                                    required="#{bindings.G3DeliveryAgentVO.hints.mandatory}"
+                                                    shortDesc="#{bindings.G3DeliveryAgentVO.hints.tooltip}" id="soc3">
+                                    <f:selectItems value="#{bindings.G3DeliveryAgentVO.items}" id="si3"/>
+                                    <f:validator binding="#{bindings.G3DeliveryAgentVO.validator}"/>
+                                </af:selectOneChoice>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc3">
+                                <af:button text="Assign" id="b1" action="#{assignDeliveryAgent.assignAgent}"/>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </af:showDetailItem>
+                <af:showDetailItem id="coupon" text="Coupon"/>
+                <af:showDetailItem id="feedback_and_complaint" text="Feedback &amp; Complaints"/>
+                <af:showDetailItem id="reviews" text="Reviews"/>
+            </af:panelTabbed>
         </af:form>
     </af:document>
 </f:view>
