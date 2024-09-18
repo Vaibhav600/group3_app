@@ -5,11 +5,26 @@
   <executables>
     <iterator Binds="OrderForRestaurant" RangeSize="25" DataControl="AppModuleDataControl"
               id="OrderForRestaurantIterator" Refresh="never"/>
+    <iterator Binds="ReservationsForRestaurant" RangeSize="10" DataControl="AppModuleDataControl"
+              id="ReservationsForRestaurantIterator"/>
+    <iterator Binds="G3RestaurantsVO" RangeSize="10" DataControl="AppModuleDataControl" id="G3RestaurantsVOIterator"/>
   </executables>
   <bindings>
     <action IterBinding="OrderForRestaurantIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
             Action="executeWithParams">
       <NamedData NDName="bRestaurantId" NDValue="#{pageFlowScope.selectedRestaurantId}"
+                 NDType="oracle.jbo.domain.Number"/>
+    </action>
+    <action IterBinding="ReservationsForRestaurantIterator" id="ExecuteWithParams1"
+            InstanceName="AppModuleDataControl.ReservationsForRestaurant" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="reservedRestaurantId" NDValue="#{pageFlowScope.selectedRestaurantId}"
+                 NDType="oracle.jbo.domain.Number"/>
+    </action>
+    <action IterBinding="G3RestaurantsVOIterator" id="ExecuteWithParams2"
+            InstanceName="AppModuleDataControl.G3RestaurantsVO" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="detailRestaurantId" NDValue="#{pageFlowScope.selectedRestaurantId}"
                  NDType="oracle.jbo.domain.Number"/>
     </action>
   </bindings>

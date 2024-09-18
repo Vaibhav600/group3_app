@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="G3ReservationsVO"
-  Version="12.2.1.11.57"
+  Version="12.2.1.22.48"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="reservedRestaurantId"
+    Kind="viewcriteria"
+    Type="oracle.jbo.domain.Number"/>
   <EntityUsage
     Name="G3ReservationsEO"
     Entity="model.services.entities.G3ReservationsEO"/>
@@ -22,7 +26,8 @@
     PrecisionRule="true"
     EntityAttrName="ReservationId"
     EntityUsage="G3ReservationsEO"
-    AliasName="RESERVATION_ID"/>
+    AliasName="RESERVATION_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="CustomerId"
     PrecisionRule="true"
@@ -65,4 +70,45 @@
     EntityAttrName="UpdatedAt"
     EntityUsage="G3ReservationsEO"
     AliasName="UPDATED_AT"/>
+  <ViewCriteria
+    Name="G3ReservationsVOCriteria"
+    ViewObjectName="model.services.views.G3ReservationsVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteria
+      Name="G3ReservationsVOSubCriteria1"
+      ViewObjectName="model.services.views.G3ReservationsVO"
+      Conjunction="AND">
+      <ViewCriteriaRow
+        Name="G3ReservationsVOSubCriteria1_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="RestaurantId"
+          ViewAttribute="RestaurantId"
+          Operator="="
+          Conjunction="AND"
+          Value=":reservedRestaurantId"
+          IsBindVarValue="true"
+          Required="Optional"/>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </ViewCriteria>
 </ViewObject>

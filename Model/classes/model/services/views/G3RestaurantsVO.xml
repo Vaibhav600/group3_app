@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="G3RestaurantsVO"
-  Version="12.2.1.11.57"
+  Version="12.2.1.22.48"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -13,6 +13,10 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="detailRestaurantId"
+    Kind="viewcriteria"
+    Type="oracle.jbo.domain.Number"/>
   <ViewAccessor
     Name="UsersLOV"
     ViewObjectName="model.services.views.G3UsersVO"
@@ -104,6 +108,47 @@
     EntityAttrName="UpdatedAt"
     EntityUsage="G3RestaurantsEO"
     AliasName="UPDATED_AT"/>
+  <ViewCriteria
+    Name="G3RestaurantsVOCriteria"
+    ViewObjectName="model.services.views.G3RestaurantsVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteria
+      Name="G3RestaurantsVOSubCriteria1"
+      ViewObjectName="model.services.views.G3RestaurantsVO"
+      Conjunction="AND">
+      <ViewCriteriaRow
+        Name="G3RestaurantsVOSubCriteria1_row_0"
+        UpperColumns="1">
+        <ViewCriteriaItem
+          Name="G3RestaurantsVOSubCriteria1_G3RestaurantsVOSubCriteria1_row_0_RestaurantId"
+          ViewAttribute="RestaurantId"
+          Operator="="
+          Conjunction="AND"
+          Value=":detailRestaurantId"
+          IsBindVarValue="true"
+          Required="Optional"/>
+      </ViewCriteriaRow>
+    </ViewCriteria>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="G3OrdersVO"
     ViewLink="model.services.link.OrderRestaurantViewLink"

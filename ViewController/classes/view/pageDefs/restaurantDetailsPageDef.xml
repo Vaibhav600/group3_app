@@ -7,6 +7,11 @@
               id="OrderForRestaurantIterator"/>
     <searchRegion Binds="OrderForRestaurantIterator" Criteria="searchOrderByRestaurantIDVC"
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="OrderForRestaurantQuery"/>
+    <iterator Binds="ReservationsForRestaurant" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ReservationsForRestaurantIterator"/>
+    <searchRegion Binds="ReservationsForRestaurantIterator" Criteria="G3ReservationsVOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ReservationsForRestaurantQuery"/>
+    <iterator Binds="G3RestaurantsVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3RestaurantsVOIterator"/>
   </executables>
   <bindings>
     <tree IterBinding="OrderForRestaurantIterator" id="OrderForRestaurant">
@@ -23,10 +28,52 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="OrderForRestaurantIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
-            Action="executeWithParams">
-      <NamedData NDName="bRestaurantId" NDType="oracle.jbo.domain.Number"
-                 NDValue="${bindings.ExecuteWithParams_bRestaurantId}"/>
-    </action>
+    <tree IterBinding="ReservationsForRestaurantIterator" id="ReservationsForRestaurant">
+      <nodeDefinition DefName="model.services.views.G3ReservationsVO" Name="ReservationsForRestaurant0">
+        <AttrNames>
+          <Item Value="ReservationId"/>
+          <Item Value="CustomerId"/>
+          <Item Value="RestaurantId"/>
+          <Item Value="TableSize"/>
+          <Item Value="Status"/>
+          <Item Value="ReservationTime"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="RestaurantId">
+      <AttrNames>
+        <Item Value="RestaurantId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="OwnerId">
+      <AttrNames>
+        <Item Value="OwnerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="AvailableSeats">
+      <AttrNames>
+        <Item Value="AvailableSeats"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3RestaurantsVOIterator" id="Status">
+      <AttrNames>
+        <Item Value="Status"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
