@@ -11,7 +11,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-
+import oracle.jbo.domain.DBSequence;
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCBindingContainer;
 import oracle.adf.model.binding.DCDataControl;
@@ -65,10 +65,16 @@ public class LoginBean {
             if (usersVO.getEstimatedRowCount() == 1) {
                 Row userRow = usersVO.first();
                 String storedPassword = (String) userRow.getAttribute("Password");
-                if (storedPassword.equals(encryptPassword(password))) {
+                
+                if (storedPassword.equals(password)) {
+                // if (storedPassword.equals(encryptPassword(password))) {
                     String role = (String) userRow.getAttribute("Role");
+                    System.out.println(role);
                     if(role.equals("owner")) {
+                        DBSequence dbSeq = (DBSequence) userRow.getAttribute("UserId");
+                        int user_id = dbSeq.getSequenceNumber().intValue();
                         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Owner Login Success"));
+                        usersVO.setNamedWhereClauseParam("bOwnerId", user_id);
                         return constants.getOwner_navigation();
                     }
                     else if(role.equals("super_admin")){
