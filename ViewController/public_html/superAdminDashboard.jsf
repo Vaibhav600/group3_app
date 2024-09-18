@@ -18,8 +18,7 @@
                               rowBandingInterval="0"
                               selectedRowKeys="#{bindings.G3RestaurantsVO.collectionModel.selectedRow}"
                               selectionListener="#{bindings.G3RestaurantsVO.collectionModel.makeCurrent}"
-                              rowSelection="single" fetchSize="#{bindings.G3RestaurantsVO.rangeSize}" id="t2"
-                              partialTriggers="l2 l3">
+                              rowSelection="single" fetchSize="#{bindings.G3RestaurantsVO.rangeSize}" id="t2">
                         <af:column sortProperty="#{bindings.G3RestaurantsVO.hints.RestaurantId.name}" sortable="true"
                                    headerText="#{bindings.G3RestaurantsVO.hints.RestaurantId.label}" id="c1">
                             <af:link id="l1" action="goToRestaurantDetails">
@@ -67,7 +66,7 @@
                         </af:column>
                         <af:column id="c7" headerText="Action">
                             <af:link text="edit" id="l2" actionListener="#{bindings.setCurrentRowWithKey.execute}">
-                                <af:showPopupBehavior popupId="edit_popup" triggerType="action"/>
+                                <af:showPopupBehavior popupId="::edit_popup" triggerType="action"/>
                             </af:link>
                         </af:column>
                     </af:table>
