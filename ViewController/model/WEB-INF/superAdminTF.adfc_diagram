@@ -13,7 +13,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>superAdminDashboard&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">239.30078</property>
+         name="y">239.16797</property>
       <property
          name="page">/superAdminDashboard.jsf</property>
       <property
@@ -82,7 +82,7 @@
       <property
          name="fromOutcome">goToAddRestaurant</property>
       <property
-         name="sdm:polyPoints">R46,314.9287,235.73438,566.9709,233.63672,L46</property>
+         name="sdm:polyPoints">R46,314.9287,235.60156,566.9727,233.63672,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -92,7 +92,7 @@
       <property
          name="fromOutcome">goToSuperAdminDashboard</property>
       <property
-         name="sdm:polyPoints">L54,567.0,240.63672,314.95782,242.73438,R54</property>
+         name="sdm:polyPoints">L54,567.0,240.63672,314.956,242.60156,R54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -102,7 +102,7 @@
       <property
          name="fromOutcome">goToSuperAdminDashboard</property>
       <property
-         name="sdm:polyPoints">L54,475.0,60.902344,277.4287,185.23438,T56</property>
+         name="sdm:polyPoints">L54,475.0,60.902344,277.4287,185.10156,T56</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall13">
@@ -125,7 +125,7 @@
       <property
          name="fromOutcome">goToRestaurantDetails</property>
       <property
-         name="sdm:polyPoints">B50,273.9287,293.23438,385.55176,360.23438,T50</property>
+         name="sdm:polyPoints">B50,273.9287,293.10156,385.55176,360.23438,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
