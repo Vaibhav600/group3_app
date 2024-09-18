@@ -1,7 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
     <af:document title="untitled1.jsf" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:pageTemplate viewId="/oracle/templates/threeColumnTemplate.jspx" id="pt1">
                 <f:facet name="center">
@@ -10,12 +12,185 @@
                             <af:panelCollection id="pc1">
                                 <f:facet name="menus"/>
                                 <f:facet name="toolbar"/>
+                                <af:table value="#{bindings.OrderForRestaurant.collectionModel}" var="row"
+                                          rows="#{bindings.OrderForRestaurant.rangeSize}"
+                                          emptyText="#{bindings.OrderForRestaurant.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.OrderForRestaurant.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.OrderForRestaurant.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.OrderForRestaurant.rangeSize}"
+                                          filterModel="#{bindings.OrderForRestaurantQuery.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.OrderForRestaurantQuery.processQuery}"
+                                          varStatus="vs" id="t1" columnSelection="single">
+                                    <af:column sortProperty="#{bindings.OrderForRestaurant.hints.OrderId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.OrderForRestaurant.hints.OrderId.label}" id="c1">
+                                        <af:selectOneChoice value="#{row.bindings.OrderId.inputValue}"
+                                                            label="#{row.bindings.OrderId.label}"
+                                                            required="#{bindings.OrderForRestaurant.hints.OrderId.mandatory}"
+                                                            shortDesc="#{bindings.OrderForRestaurant.hints.OrderId.tooltip}"
+                                                            readOnly="true" id="soc2">
+                                            <f:selectItems value="#{row.bindings.OrderId.items}" id="si2"/>
+                                            <f:validator binding="#{row.bindings.OrderId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.OrderForRestaurant.hints.RestaurantId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.OrderForRestaurant.hints.RestaurantId.label}"
+                                               id="c2">
+                                        <af:outputText value="#{row.RestaurantId}"
+                                                       shortDesc="#{bindings.OrderForRestaurant.hints.RestaurantId.tooltip}"
+                                                       id="ot1">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.OrderForRestaurant.hints.RestaurantId.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.OrderForRestaurant.hints.CustomerId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.OrderForRestaurant.hints.CustomerId.label}"
+                                               id="c3">
+                                        <af:outputText value="#{row.CustomerId}"
+                                                       shortDesc="#{bindings.OrderForRestaurant.hints.CustomerId.tooltip}"
+                                                       id="ot2">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.OrderForRestaurant.hints.CustomerId.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.OrderForRestaurant.hints.DeliveryAgentId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.OrderForRestaurant.hints.DeliveryAgentId.label}"
+                                               id="c4">
+                                        <af:outputText value="#{row.DeliveryAgentId}"
+                                                       shortDesc="#{bindings.OrderForRestaurant.hints.DeliveryAgentId.tooltip}"
+                                                       id="ot3">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.OrderForRestaurant.hints.DeliveryAgentId.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.OrderForRestaurant.hints.OrderStatus.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.OrderForRestaurant.hints.OrderStatus.label}"
+                                               id="c5">
+                                        <af:outputText value="#{row.OrderStatus}"
+                                                       shortDesc="#{bindings.OrderForRestaurant.hints.OrderStatus.tooltip}"
+                                                       id="ot4"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.OrderForRestaurant.hints.PaymentStatus.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.OrderForRestaurant.hints.PaymentStatus.label}"
+                                               id="c6">
+                                        <af:outputText value="#{row.PaymentStatus}"
+                                                       shortDesc="#{bindings.OrderForRestaurant.hints.PaymentStatus.tooltip}"
+                                                       id="ot5"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.OrderForRestaurant.hints.CouponId.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.OrderForRestaurant.hints.CouponId.label}" id="c7">
+                                        <af:outputText value="#{row.CouponId}"
+                                                       shortDesc="#{bindings.OrderForRestaurant.hints.CouponId.tooltip}"
+                                                       id="ot6">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.OrderForRestaurant.hints.CouponId.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.OrderForRestaurant.hints.TotalAmount.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.OrderForRestaurant.hints.TotalAmount.label}"
+                                               id="c8">
+                                        <af:outputText value="#{row.TotalAmount}"
+                                                       shortDesc="#{bindings.OrderForRestaurant.hints.TotalAmount.tooltip}"
+                                                       id="ot7">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.OrderForRestaurant.hints.TotalAmount.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                </af:table>
                                 <f:facet name="statusbar"/>
                             </af:panelCollection>
                         </f:facet>
                         <f:facet name="second">
                             <af:panelTabbed position="above" id="pt2">
-                                <af:showDetailItem id="tab1" text="Tab Label 1"/>
+                                <af:showDetailItem id="tab1" text="Tab Label 1">
+                                    <af:panelFormLayout id="pfl2" rows="5">
+                                        <af:selectOneChoice value="#{bindings.OrderId.inputValue}"
+                                                            label="#{bindings.OrderId.label}"
+                                                            required="#{bindings.OrderId.hints.mandatory}"
+                                                            shortDesc="#{bindings.OrderId.hints.tooltip}" id="soc3">
+                                            <f:selectItems value="#{bindings.OrderId.items}" id="si3"/>
+                                            <f:validator binding="#{bindings.OrderId.validator}"/>
+                                        </af:selectOneChoice>
+                                        <af:inputText value="#{bindings.RestaurantId1.inputValue}"
+                                                      label="#{bindings.RestaurantId1.hints.label}"
+                                                      required="#{bindings.RestaurantId1.hints.mandatory}"
+                                                      columns="#{bindings.RestaurantId1.hints.displayWidth}"
+                                                      maximumLength="#{bindings.RestaurantId1.hints.precision}"
+                                                      shortDesc="#{bindings.RestaurantId1.hints.tooltip}" id="it7">
+                                            <f:validator binding="#{bindings.RestaurantId1.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.RestaurantId1.format}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.CustomerId.inputValue}"
+                                                      label="#{bindings.CustomerId.hints.label}"
+                                                      required="#{bindings.CustomerId.hints.mandatory}"
+                                                      columns="#{bindings.CustomerId.hints.displayWidth}"
+                                                      maximumLength="#{bindings.CustomerId.hints.precision}"
+                                                      shortDesc="#{bindings.CustomerId.hints.tooltip}" id="it8">
+                                            <f:validator binding="#{bindings.CustomerId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.CustomerId.format}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.DeliveryAgentId.inputValue}"
+                                                      label="#{bindings.DeliveryAgentId.hints.label}"
+                                                      required="#{bindings.DeliveryAgentId.hints.mandatory}"
+                                                      columns="#{bindings.DeliveryAgentId.hints.displayWidth}"
+                                                      maximumLength="#{bindings.DeliveryAgentId.hints.precision}"
+                                                      shortDesc="#{bindings.DeliveryAgentId.hints.tooltip}" id="it9">
+                                            <f:validator binding="#{bindings.DeliveryAgentId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.DeliveryAgentId.format}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.OrderStatus.inputValue}"
+                                                      label="#{bindings.OrderStatus.hints.label}"
+                                                      required="#{bindings.OrderStatus.hints.mandatory}"
+                                                      columns="#{bindings.OrderStatus.hints.displayWidth}"
+                                                      maximumLength="#{bindings.OrderStatus.hints.precision}"
+                                                      shortDesc="#{bindings.OrderStatus.hints.tooltip}" id="it10">
+                                            <f:validator binding="#{bindings.OrderStatus.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.PaymentStatus.inputValue}"
+                                                      label="#{bindings.PaymentStatus.hints.label}"
+                                                      required="#{bindings.PaymentStatus.hints.mandatory}"
+                                                      columns="#{bindings.PaymentStatus.hints.displayWidth}"
+                                                      maximumLength="#{bindings.PaymentStatus.hints.precision}"
+                                                      shortDesc="#{bindings.PaymentStatus.hints.tooltip}" id="it11">
+                                            <f:validator binding="#{bindings.PaymentStatus.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.CouponId.inputValue}"
+                                                      label="#{bindings.CouponId.hints.label}"
+                                                      required="#{bindings.CouponId.hints.mandatory}"
+                                                      columns="#{bindings.CouponId.hints.displayWidth}"
+                                                      maximumLength="#{bindings.CouponId.hints.precision}"
+                                                      shortDesc="#{bindings.CouponId.hints.tooltip}" id="it12">
+                                            <f:validator binding="#{bindings.CouponId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.CouponId.format}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.TotalAmount.inputValue}"
+                                                      label="#{bindings.TotalAmount.hints.label}"
+                                                      required="#{bindings.TotalAmount.hints.mandatory}"
+                                                      columns="#{bindings.TotalAmount.hints.displayWidth}"
+                                                      maximumLength="#{bindings.TotalAmount.hints.precision}"
+                                                      shortDesc="#{bindings.TotalAmount.hints.tooltip}" id="it13">
+                                            <f:validator binding="#{bindings.TotalAmount.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TotalAmount.format}"/>
+                                        </af:inputText>
+                                        <f:facet name="footer">
+                                            <af:button text="Submit" id="b5"/>
+                                        </f:facet>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
                             </af:panelTabbed>
                         </f:facet>
                     </af:panelSplitter>
@@ -23,8 +198,87 @@
                 <f:facet name="header"/>
                 <f:facet name="start">
                     <af:panelAccordion discloseMany="false" id="pa1">
-                        <af:showDetailItem id="pane1" text="Departments"/>
-                        <af:showDetailItem text="More Info" id="sdi1"/>
+                        <af:showDetailItem id="pane1" text="Departments">
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText value="#{bindings.RestaurantId.inputValue}"
+                                              label="#{bindings.RestaurantId.hints.label}"
+                                              required="#{bindings.RestaurantId.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.RestaurantId.hints.displayWidth}"
+                                              maximumLength="#{bindings.RestaurantId.hints.precision}"
+                                              shortDesc="#{bindings.RestaurantId.hints.tooltip}" id="it1">
+                                    <f:validator binding="#{bindings.RestaurantId.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.RestaurantId.format}"/>
+                                </af:inputText>
+                                <af:selectOneChoice value="#{bindings.OwnerId.inputValue}"
+                                                    label="#{bindings.OwnerId.label}"
+                                                    required="#{bindings.OwnerId.hints.mandatory}"
+                                                    shortDesc="#{bindings.OwnerId.hints.tooltip}" readOnly="true"
+                                                    id="soc1">
+                                    <f:selectItems value="#{bindings.OwnerId.items}" id="si1"/>
+                                    <f:validator binding="#{bindings.OwnerId.validator}"/>
+                                </af:selectOneChoice>
+                                <af:inputText value="#{bindings.Name.inputValue}" label="#{bindings.Name.hints.label}"
+                                              required="#{bindings.Name.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.Name.hints.displayWidth}"
+                                              maximumLength="#{bindings.Name.hints.precision}"
+                                              shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
+                                    <f:validator binding="#{bindings.Name.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Address.inputValue}"
+                                              label="#{bindings.Address.hints.label}"
+                                              required="#{bindings.Address.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.Address.hints.displayWidth}"
+                                              maximumLength="#{bindings.Address.hints.precision}"
+                                              shortDesc="#{bindings.Address.hints.tooltip}" id="it3">
+                                    <f:validator binding="#{bindings.Address.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Phone.inputValue}" label="#{bindings.Phone.hints.label}"
+                                              required="#{bindings.Phone.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.Phone.hints.displayWidth}"
+                                              maximumLength="#{bindings.Phone.hints.precision}"
+                                              shortDesc="#{bindings.Phone.hints.tooltip}" id="it4">
+                                    <f:validator binding="#{bindings.Phone.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Phone.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.AvailableSeats.inputValue}"
+                                              label="#{bindings.AvailableSeats.hints.label}"
+                                              required="#{bindings.AvailableSeats.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.AvailableSeats.hints.displayWidth}"
+                                              maximumLength="#{bindings.AvailableSeats.hints.precision}"
+                                              shortDesc="#{bindings.AvailableSeats.hints.tooltip}" id="it5">
+                                    <f:validator binding="#{bindings.AvailableSeats.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.AvailableSeats.format}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Status.inputValue}"
+                                              label="#{bindings.Status.hints.label}"
+                                              required="#{bindings.Status.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.Status.hints.displayWidth}"
+                                              maximumLength="#{bindings.Status.hints.precision}"
+                                              shortDesc="#{bindings.Status.hints.tooltip}" id="it6">
+                                    <f:validator binding="#{bindings.Status.validator}"/>
+                                </af:inputText>
+                                <f:facet name="footer">
+                                    <af:panelGroupLayout layout="horizontal" id="pgl1">
+                                        <af:button actionListener="#{bindings.First.execute}" text="First"
+                                                   disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                        <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                                   disabled="#{!bindings.Previous.enabled}" partialSubmit="true"
+                                                   id="b2"/>
+                                        <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                                   disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                        <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                                   disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                                    </af:panelGroupLayout>
+                                </f:facet>
+                            </af:panelFormLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="More Info" id="sdi1">
+                            <dvt:pieChart id="pieChart1" var="row"
+                                          value="#{bindings.OrderForRestaurant1.collectionModel}">
+                                <dvt:chartLegend id="cl1"/>
+                                <dvt:pieDataItem id="di1" label="#{row.DeliveryAgentId}" value="#{row.OrderId}"/>
+                            </dvt:pieChart>
+                        </af:showDetailItem>
                     </af:panelAccordion>
                 </f:facet>
                 <f:facet name="branding"/>

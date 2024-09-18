@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="G3RestaurantsVO"
-  Version="12.2.1.22.48"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -101,13 +101,27 @@
     PrecisionRule="true"
     EntityAttrName="CreatedAt"
     EntityUsage="G3RestaurantsEO"
-    AliasName="CREATED_AT"/>
+    AliasName="CREATED_AT">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="G3RestaurantsVORow"/>
+  </ViewAttribute>
   <ViewAttribute
     Name="UpdatedAt"
     PrecisionRule="true"
     EntityAttrName="UpdatedAt"
     EntityUsage="G3RestaurantsEO"
-    AliasName="UPDATED_AT"/>
+    AliasName="UPDATED_AT">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.services.views.G3RestaurantsVO.UpdatedAt_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.services.views.G3RestaurantsVO.UpdatedAt_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="G3RestaurantsVOCriteria"
     ViewObjectName="model.services.views.G3RestaurantsVO"
@@ -169,4 +183,8 @@
     ViewLink="model.services.link.MenuItemRestaurantViewLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>
