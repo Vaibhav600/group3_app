@@ -10,6 +10,7 @@
     <page path="/restaurantDetails.jsf" usageId="view_restaurantDetailsPageDef"/>
     <page path="/addRestaurant.jsf" usageId="view_addRestaurantPageDef"/>
     <page path="/untitled1.jsf" usageId="view_untitled1PageDef"/>
+    <page path="/ownerDashboard.jsf" usageId="view_ownerDashboardPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_loginPageDef" path="view.pageDefs.loginPageDef"/>
@@ -20,6 +21,7 @@
     <page id="view_restaurantDetailsPageDef" path="view.pageDefs.restaurantDetailsPageDef"/>
     <page id="view_addRestaurantPageDef" path="view.pageDefs.addRestaurantPageDef"/>
     <page id="view_untitled1PageDef" path="view.pageDefs.untitled1PageDef"/>
+    <page id="view_ownerDashboardPageDef" path="view.pageDefs.ownerDashboardPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.services"

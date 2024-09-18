@@ -4,8 +4,71 @@
         xmlns:c="http://java.sun.com/jsp/jstl/core">
     <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle']}"/>
     <af:document title="owner_dashboard.jsf" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
-            <af:message id="m1" message="#{viewcontrollerBundle.OWNER_DASHBOARD}"/>
+            <af:panelTabbed position="left" id="pt1" verticalTabMode="iconAndText">
+                <af:showDetailItem id="home" text="Home" disclosed="true">
+                    <af:panelGroupLayout layout="vertical">
+            <af:outputText value="Welcome to the Home page!" />
+        </af:panelGroupLayout>
+                </af:showDetailItem>
+                <af:showDetailItem id="menu" text="Menu">
+                <af:panelGroupLayout layout="vertical">
+            <af:outputText value="Welcome to the menu page!" />
+        </af:panelGroupLayout>
+                </af:showDetailItem>
+                <af:showDetailItem id="order_status" text="Order Status">
+                <af:panelGroupLayout layout="vertical">
+            <af:outputText value="Welcome to the order status page!" />
+        </af:panelGroupLayout>
+                </af:showDetailItem>
+                <af:showDetailItem id="reservations" text="Reservations">
+                <af:panelGroupLayout layout="vertical">
+            <af:outputText value="Welcome to the reservations page!" />
+        </af:panelGroupLayout>
+                </af:showDetailItem>
+                
+                <af:showDetailItem id="delivery_agents" text="Delivery Agents">
+                    <af:panelGridLayout id="pgl1">
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                            <af:gridCell marginStart="5px" width="34%" id="gc1">
+                                <af:inputComboboxListOfValues id="orderIdId"
+                                                              popupTitle="Search and Select: #{bindings.OrderId.hints.label}"
+                                                              value="#{bindings.OrderId.inputValue}"
+                                                              label="#{bindings.OrderId.hints.label}"
+                                                              model="#{bindings.OrderId.listOfValuesModel}"
+                                                              required="#{bindings.OrderId.hints.mandatory}"
+                                                              columns="#{bindings.OrderId.hints.displayWidth}"
+                                                              shortDesc="#{bindings.OrderId.hints.tooltip}">
+                                    <f:validator binding="#{bindings.OrderId.validator}"/>
+                                </af:inputComboboxListOfValues>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="33%" id="gc2"/>
+                            <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc3">
+                                <af:button text="Assign" id="b1"/>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </af:showDetailItem>
+                
+                <af:showDetailItem id="coupons" text="Coupons">
+                <af:panelGroupLayout layout="vertical">
+            <af:outputText value="Welcome to the coupons page!" />
+        </af:panelGroupLayout>
+                </af:showDetailItem>
+                
+                <af:showDetailItem id="feedbacks" text="Feedbacks">
+                <af:panelGroupLayout layout="vertical">
+            <af:outputText value="Welcome to the feedbacks page!" />
+        </af:panelGroupLayout>
+                </af:showDetailItem>
+                
+                <af:showDetailItem id="reviews" text="Reviews">
+                <af:panelGroupLayout layout="vertical">
+            <af:outputText value="Welcome to the reviews page!" />
+        </af:panelGroupLayout>
+                </af:showDetailItem>
+            </af:panelTabbed>
         </af:form>
     </af:document>
 </f:view>

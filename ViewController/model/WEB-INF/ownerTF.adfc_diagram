@@ -13,33 +13,10 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>owner_dashboard&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">263.5703</property>
+         name="y">263.4375</property>
       <property
          name="page">/ownerDashboard.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
-   <View
-      id="View3">
-      <property
-         name="activityId">addCoupon</property>
-      <property
-         name="x">482.0</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>addCoupon&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="y">136.46875</property>
-      <property
-         name="exceptionHandler">false</property>
-   </View>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase4"
-      from="View2"
-      to="View3">
-      <property
-         name="fromOutcome">goToAddCoupon</property>
-      <property
-         name="sdm:polyPoints">R50,218.70898,263.5039,441.0,136.40234,L50</property>
-   </ControlFlowCase>
 </SDM>

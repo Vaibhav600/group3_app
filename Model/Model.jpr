@@ -103,6 +103,7 @@
          <string v=".jpx"/>
          <string v=".rpx"/>
          <string v=".bcs"/>
+         <string v=".json"/>
       </list>
       <value n="webIANAEncoding" v="UTF-8"/>
    </hash>

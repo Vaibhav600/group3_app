@@ -4,7 +4,7 @@
 <JboProject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="Model"
-  Version="12.2.1.11.57"
+  Version="12.2.1.22.48"
   SeparateXMLFiles="true"
   PackageName="model">
   <DesignTime>
@@ -14,30 +14,6 @@
     <Attr Name="_jprName" Value="../../Model.jpr"/>
     <Attr Name="_NamedConnection" Value="oracle"/>
   </DesignTime>
-  <Containee
-    Name="assoc"
-    PackageName="model.assoc"
-    ObjectType="JboPackage">
-    <DesignTime>
-      <Attr Name="_AS" Value="true"/>
-    </DesignTime>
-  </Containee>
-  <Containee
-    Name="entities"
-    PackageName="model.entities"
-    ObjectType="JboPackage">
-    <DesignTime>
-      <Attr Name="_EO" Value="true"/>
-    </DesignTime>
-  </Containee>
-  <Containee
-    Name="link"
-    PackageName="model.link"
-    ObjectType="JboPackage">
-    <DesignTime>
-      <Attr Name="_VL" Value="true"/>
-    </DesignTime>
-  </Containee>
   <Containee
     Name="model"
     PackageName="model"
@@ -77,14 +53,6 @@
   <Containee
     Name="views"
     PackageName="model.services.views"
-    ObjectType="JboPackage">
-    <DesignTime>
-      <Attr Name="_VO" Value="true"/>
-    </DesignTime>
-  </Containee>
-  <Containee
-    Name="views"
-    PackageName="model.views"
     ObjectType="JboPackage">
     <DesignTime>
       <Attr Name="_VO" Value="true"/>

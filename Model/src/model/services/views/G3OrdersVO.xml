@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="G3OrdersVO"
-  Version="12.2.1.11.57"
+  Version="12.2.1.22.48"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -12,11 +12,30 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
   <Variable
     Name="bRestaurantId"
     Kind="viewcriteria"
     Type="oracle.jbo.domain.Number"/>
+  <ViewAccessor
+    Name="G3OrdersVO"
+    ViewObjectName="model.services.views.G3OrdersVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_OrderId"
+    ListVOName="G3OrdersVO"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OrderId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="OrderId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="G3OrdersEO"
     Entity="model.services.entities.G3OrdersEO"/>
@@ -26,7 +45,16 @@
     PrecisionRule="true"
     EntityAttrName="OrderId"
     EntityUsage="G3OrdersEO"
-    AliasName="ORDER_ID"/>
+    AliasName="ORDER_ID"
+    IsUpdateable="while_insert"
+    LOVName="LOV_OrderId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="RestaurantId"
     PrecisionRule="true"
@@ -81,6 +109,16 @@
     EntityAttrName="UpdatedAt"
     EntityUsage="G3OrdersEO"
     AliasName="UPDATED_AT"/>
+  <ViewAttribute
+    Name="t_order_id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC"
+    Expression="TO_NUMBER(ORDER_ID)"/>
   <ViewCriteria
     Name="searchOrderByRestaurantIDVC"
     ViewObjectName="model.services.views.G3OrdersVO"

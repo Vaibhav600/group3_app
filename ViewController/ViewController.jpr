@@ -69,6 +69,9 @@
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
    <value n="defaultPackage" v="view"/>
+   <hash n="oracle.adfdtinternal.view.rich.setting.ADFViewSettings">
+      <value n="ENABLE_ADF_WEBAPP_LIB_SUPPORT" v="true"/>
+   </hash>
    <hash n="oracle.ide.model.DependencyConfiguration">
       <list n="dependencyList">
          <hash>
@@ -275,6 +278,14 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="ADF Common Web Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle Page Templates"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="Oracle XML Parser v2"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -394,6 +405,14 @@
          </hash>
          <hash>
             <value n="id" v="ADF Faces Databinding Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="ADF Common Web Runtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Oracle Page Templates"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>

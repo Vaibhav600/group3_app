@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="ownerDashboardPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="G3OrdersVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3OrdersVOIterator"/>
+  </executables>
+  <bindings>
+    <listOfValues IterBinding="G3OrdersVOIterator" StaticList="false" Uses="LOV_OrderId" id="OrderId"/>
+  </bindings>
+</pageDefinition>
