@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <iterator Binds="G3UsersVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3UsersVOIterator"
-              Refresh="never"/>
+              />
   </executables>
   <bindings>
     <action IterBinding="G3UsersVOIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
@@ -13,11 +13,5 @@
       <NamedData NDName="bindingOwner" NDValue="#{pageFlowScope.selectedOwnerId}" NDType="oracle.jbo.domain.Number"/>
     </action>
   </bindings>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
-                id="superAdminTF_superAdminTF_ExecuteWithParams1PageDef" Package="view.pageDefs" SkipValidation="true">
-  <parameters/>
-  <executables>
-    <variableIterator id="variables"/>
-  </executables>
-  <bindings/>
+
 </pageDefinition>
