@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="ownerDetailsPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="G3UsersVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3UsersVOIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="G3UsersVOIterator" id="UserId">
+      <AttrNames>
+        <Item Value="UserId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3UsersVOIterator" id="FullName">
+      <AttrNames>
+        <Item Value="FullName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3UsersVOIterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3UsersVOIterator" id="Phone">
+      <AttrNames>
+        <Item Value="Phone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3UsersVOIterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="G3UsersVOIterator" id="Role">
+      <AttrNames>
+        <Item Value="Role"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

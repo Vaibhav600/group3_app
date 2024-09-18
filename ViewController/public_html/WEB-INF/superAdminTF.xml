@@ -37,6 +37,19 @@
         <name>Back</name>
       </outcome>
     </task-flow-return>
+    <view id="ownerDetails">
+      <page>/ownerDetails.jsf</page>
+      <input-page-parameter id="__19">
+        <from-value>bindingOwner</from-value>
+        <to-value>#{pageFlowScope.selectedOwnerId}</to-value>
+      </input-page-parameter>
+    </view>
+    <method-call id="ExecuteWithParams1">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__1">
       <from-activity-id>superAdminDashboard</from-activity-id>
       <control-flow-case id="__2">
@@ -77,6 +90,17 @@
       <from-activity-id>restaurantDetails</from-activity-id>
       <control-flow-case id="__17">
         <to-activity-id>backToSuperAdmin</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>toOwnerDetails</from-outcome>
+        <to-activity-id>ExecuteWithParams1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>ExecuteWithParams1</from-activity-id>
+      <control-flow-case id="__18">
+        <from-outcome>ExecuteWithParams</from-outcome>
+        <to-activity-id>ownerDetails</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
   </task-flow-definition>

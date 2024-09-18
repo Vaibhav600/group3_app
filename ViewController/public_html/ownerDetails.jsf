@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="ownerDetails.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow id="gr2">
+                    <af:gridCell id="gc2" marginStart="10px" marginEnd="10px">
+                        <af:outputLabel value="Restaurant Owner" id="ol2" inlineStyle="font-size:x-large; font-weight:bold;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                        <af:panelFormLayout id="pfl1">
+                            <af:panelLabelAndMessage label="#{bindings.UserId.hints.label}" id="plam1">
+                                <af:outputText value="#{bindings.UserId.inputValue}"
+                                               shortDesc="#{bindings.UserId.hints.tooltip}" id="ot1">
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.UserId.format}"/>
+                                </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.FullName.hints.label}" id="plam2">
+                                <af:outputText value="#{bindings.FullName.inputValue}"
+                                               shortDesc="#{bindings.FullName.hints.tooltip}" id="ot2"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.Email.hints.label}" id="plam3">
+                                <af:outputText value="#{bindings.Email.inputValue}"
+                                               shortDesc="#{bindings.Email.hints.tooltip}" id="ot3"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.Phone.hints.label}" id="plam4">
+                                <af:outputText value="#{bindings.Phone.inputValue}"
+                                               shortDesc="#{bindings.Phone.hints.tooltip}" id="ot4"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.Address.hints.label}" id="plam5">
+                                <af:outputText value="#{bindings.Address.inputValue}"
+                                               shortDesc="#{bindings.Address.hints.tooltip}" id="ot5"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.Role.hints.label}" id="plam6">
+                                <af:outputText value="#{bindings.Role.inputValue}"
+                                               shortDesc="#{bindings.Role.hints.tooltip}" id="ot6"/>
+                            </af:panelLabelAndMessage>
+                        </af:panelFormLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

@@ -22,10 +22,14 @@
                                 </af:outputText>
                             </af:panelLabelAndMessage>
                             <af:panelLabelAndMessage label="#{bindings.OwnerId.hints.label}" id="plam2">
-                                <af:outputText value="#{bindings.OwnerId.inputValue}"
-                                               shortDesc="#{bindings.OwnerId.hints.tooltip}" id="ot9">
-                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.OwnerId.format}"/>
-                                </af:outputText>
+                                <af:link id="l1" action="toOwnerDetails">
+                                    <af:outputText value="#{bindings.OwnerId.inputValue}"
+                                                   shortDesc="#{bindings.OwnerId.hints.tooltip}" id="ot9">
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.OwnerId.format}"/>
+                                    </af:outputText>
+                                    <af:setPropertyListener from="#{bindings.OwnerId.inputValue}"
+                                                            to="#{pageFlowScope.selectedOwnerId}" type="action"/>
+                                </af:link>
                             </af:panelLabelAndMessage>
                             <af:panelLabelAndMessage label="#{bindings.Name.hints.label}" id="plam3">
                                 <af:outputText value="#{bindings.Name.inputValue}"
@@ -282,6 +286,73 @@
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
+        </af:form>
+        <af:form id="f2">
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                <af:panelWindow id="pw1">
+                    <af:panelFormLayout id="pfl2">
+                        <af:inputText value="#{bindings.UserId.inputValue}" label="#{bindings.UserId.hints.label}"
+                                      required="#{bindings.UserId.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.UserId.hints.displayWidth}"
+                                      maximumLength="#{bindings.UserId.hints.precision}"
+                                      shortDesc="#{bindings.UserId.hints.tooltip}" id="it9">
+                            <f:validator binding="#{bindings.UserId.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.UserId.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.FullName.inputValue}" label="#{bindings.FullName.hints.label}"
+                                      required="#{bindings.FullName.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.FullName.hints.displayWidth}"
+                                      maximumLength="#{bindings.FullName.hints.precision}"
+                                      shortDesc="#{bindings.FullName.hints.tooltip}" id="it10">
+                            <f:validator binding="#{bindings.FullName.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                                      required="#{bindings.Email.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.Email.hints.displayWidth}"
+                                      maximumLength="#{bindings.Email.hints.precision}"
+                                      shortDesc="#{bindings.Email.hints.tooltip}" id="it11">
+                            <f:validator binding="#{bindings.Email.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Phone1.inputValue}" label="#{bindings.Phone1.hints.label}"
+                                      required="#{bindings.Phone1.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.Phone1.hints.displayWidth}"
+                                      maximumLength="#{bindings.Phone1.hints.precision}"
+                                      shortDesc="#{bindings.Phone1.hints.tooltip}" id="it12">
+                            <f:validator binding="#{bindings.Phone1.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Address1.inputValue}" label="#{bindings.Address1.hints.label}"
+                                      required="#{bindings.Address1.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.Address1.hints.displayWidth}"
+                                      maximumLength="#{bindings.Address1.hints.precision}"
+                                      shortDesc="#{bindings.Address1.hints.tooltip}" id="it13">
+                            <f:validator binding="#{bindings.Address1.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Role.inputValue}" label="#{bindings.Role.hints.label}"
+                                      required="#{bindings.Role.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.Role.hints.displayWidth}"
+                                      maximumLength="#{bindings.Role.hints.precision}"
+                                      shortDesc="#{bindings.Role.hints.tooltip}" id="it14">
+                            <f:validator binding="#{bindings.Role.validator}"/>
+                        </af:inputText>
+                        <af:inputDate value="#{bindings.CreatedAt.inputValue}" readOnly="true"
+                                      label="#{bindings.CreatedAt.hints.label}"
+                                      required="#{bindings.CreatedAt.hints.mandatory}"
+                                      columns="#{bindings.CreatedAt.hints.displayWidth}"
+                                      shortDesc="#{bindings.CreatedAt.hints.tooltip}" id="id2">
+                            <f:validator binding="#{bindings.CreatedAt.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.CreatedAt.format}"/>
+                        </af:inputDate>
+                        <af:inputDate value="#{bindings.UpdatedAt.inputValue}" readOnly="true"
+                                      label="#{bindings.UpdatedAt.hints.label}"
+                                      required="#{bindings.UpdatedAt.hints.mandatory}"
+                                      columns="#{bindings.UpdatedAt.hints.displayWidth}"
+                                      shortDesc="#{bindings.UpdatedAt.hints.tooltip}" id="id3">
+                            <f:validator binding="#{bindings.UpdatedAt.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.UpdatedAt.format}"/>
+                        </af:inputDate>
+                    </af:panelFormLayout>
+                </af:panelWindow>
+            </af:popup>
         </af:form>
     </af:document>
 </f:view>
