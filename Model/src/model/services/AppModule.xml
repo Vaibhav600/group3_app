@@ -26,6 +26,12 @@
   <ViewUsage
     Name="RestaurantForUser"
     ViewObjectName="model.services.views.G3RestaurantsVO"/>
+  <ViewUsage
+    Name="G3DeliveryAgentVO"
+    ViewObjectName="model.services.views.G3DeliveryAgentVO"/>
+  <ViewUsage
+    Name="G3OrdersVO"
+    ViewObjectName="model.services.views.G3OrdersVO"/>
   <ViewLinkUsage
     Name="OrderRestaurantViewLink"
     ViewLinkObjectName="model.services.link.OrderRestaurantViewLink"

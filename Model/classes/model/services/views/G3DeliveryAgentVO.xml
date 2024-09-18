@@ -13,6 +13,25 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="G3DeliveryAgentVO"
+    ViewObjectName="model.services.views.G3DeliveryAgentVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AgentId"
+    ListVOName="G3DeliveryAgentVO"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AgentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AgentId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="G3DeliveryAgentEO"
     Entity="model.services.entities.G3DeliveryAgentEO"/>
@@ -22,7 +41,16 @@
     PrecisionRule="true"
     EntityAttrName="AgentId"
     EntityUsage="G3DeliveryAgentEO"
-    AliasName="AGENT_ID"/>
+    AliasName="AGENT_ID"
+    IsUpdateable="while_insert"
+    LOVName="LOV_AgentId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Name"
     PrecisionRule="true"
