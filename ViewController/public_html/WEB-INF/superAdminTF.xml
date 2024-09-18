@@ -44,7 +44,7 @@
         <to-value>#{pageFlowScope.selectedOwnerId}</to-value>
       </input-page-parameter>
     </view>
-    <method-call id="ExecuteWithParams1">
+    <method-call id="ExecuteWithParamsOwner">
       <method>#{bindings.ExecuteWithParams.execute}</method>
       <outcome>
         <fixed-outcome>ExecuteWithParams</fixed-outcome>
@@ -93,13 +93,12 @@
       </control-flow-case>
       <control-flow-case id="__5">
         <from-outcome>toOwnerDetails</from-outcome>
-        <to-activity-id>ExecuteWithParams1</to-activity-id>
+        <to-activity-id>ExecuteWithParamsOwner</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__6">
-      <from-activity-id>ExecuteWithParams1</from-activity-id>
+      <from-activity-id>ExecuteWithParamsOwner</from-activity-id>
       <control-flow-case id="__18">
-        <from-outcome>ExecuteWithParams</from-outcome>
         <to-activity-id>ownerDetails</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

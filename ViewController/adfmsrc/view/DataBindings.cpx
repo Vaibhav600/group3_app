@@ -11,7 +11,7 @@
     <page path="/addRestaurant.jsf" usageId="view_addRestaurantPageDef"/>
     <page path="/untitled1.jsf" usageId="view_untitled1PageDef"/>
     <page path="/ownerDetails.jsf" usageId="view_ownerDetailsPageDef"/>
-    <page path="/WEB-INF/superAdminTF.xml#superAdminTF@ExecuteWithParams1"
+    <page path="/WEB-INF/superAdminTF.xml#superAdminTF@ExecuteWithParamsOwner"
           usageId="view_superAdminTF_superAdminTF_ExecuteWithParams1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
