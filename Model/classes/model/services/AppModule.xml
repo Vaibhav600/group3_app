@@ -39,6 +39,9 @@
   <ViewUsage
     Name="OrderForRestaurantForUser"
     ViewObjectName="model.services.views.G3OrdersVO"/>
+  <ViewUsage
+    Name="ReservationForRestaurantForUser"
+    ViewObjectName="model.services.views.G3ReservationsVO"/>
   <ViewLinkUsage
     Name="OrderRestaurantViewLink"
     ViewLinkObjectName="model.services.link.OrderRestaurantViewLink"
@@ -62,5 +65,11 @@
     ViewLinkObjectName="model.services.link.OrderRestaurantViewLink"
     SrcViewUsageName="model.services.AppModule.RestaurantForUser"
     DstViewUsageName="model.services.AppModule.OrderForRestaurantForUser"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ReservationForRestaurantForUserViewLink"
+    ViewLinkObjectName="model.services.link.ReservationRestaurantViewLink"
+    SrcViewUsageName="model.services.AppModule.RestaurantForUser"
+    DstViewUsageName="model.services.AppModule.ReservationForRestaurantForUser"
     Reversed="false"/>
 </AppModule>

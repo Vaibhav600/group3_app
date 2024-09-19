@@ -39,13 +39,8 @@ public class AssignDeliveryAgent {
             orders_vo.setNamedWhereClauseParam("bOrderId",order_id);
             orders_vo.executeQuery();
             
-            System.out.println(order_id);
-            System.out.println(agent_id);
-            
-            if(orders_vo.hasNext()) {
-                Row row = orders_vo.next();
-                row.setAttribute("DeliveryAgentId",agent_id);   
-            }
+            Row row = orders_vo.first();
+            row.setAttribute("DeliveryAgentId", agent_id);
             
             am.getTransaction().commit();
         }

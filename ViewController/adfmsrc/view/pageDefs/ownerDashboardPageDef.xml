@@ -4,18 +4,20 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="G3OrdersVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3OrdersVOIterator"/>
     <iterator Binds="G3DeliveryAgentVO" RangeSize="25" DataControl="AppModuleDataControl"
               id="G3DeliveryAgentVOIterator"/>
     <iterator Binds="G3UsersVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3UsersVOIterator"/>
+    <iterator Binds="ReservationForRestaurantForUser" RangeSize="25" DataControl="AppModuleDataControl"
+              id="ReservationForRestaurantForUserIterator"/>
+    <searchRegion Binds="ReservationForRestaurantForUserIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ReservationForRestaurantForUserQuery"/>
+    <iterator Binds="OrderForRestaurantForUser" RangeSize="25" DataControl="AppModuleDataControl"
+              id="OrderForRestaurantForUserIterator"/>
+    <searchRegion Binds="OrderForRestaurantForUserIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="OrderForRestaurantForUserQuery"/>
   </executables>
   <bindings>
-    <list IterBinding="G3OrdersVOIterator" ListOperMode="navigation" ListIter="G3OrdersVOIterator" id="G3OrdersVO"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject">
-      <AttrNames>
-        <Item Value="OrderId"/>
-      </AttrNames>
-    </list>
     <list IterBinding="G3DeliveryAgentVOIterator" ListOperMode="navigation" ListIter="G3DeliveryAgentVOIterator"
           id="G3DeliveryAgentVO" DTSupportsMRU="true" SelectItemValueMode="ListObject">
       <AttrNames>
@@ -72,5 +74,51 @@
         <Item Value="t_owner_id"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="ReservationForRestaurantForUserIterator" id="ReservationForRestaurantForUser">
+      <nodeDefinition DefName="model.services.views.G3ReservationsVO" Name="ReservationForRestaurantForUser0">
+        <AttrNames>
+          <Item Value="ReservationId"/>
+          <Item Value="CustomerId"/>
+          <Item Value="RestaurantId"/>
+          <Item Value="TableSize"/>
+          <Item Value="Status"/>
+          <Item Value="ReservationTime"/>
+          <Item Value="CreatedAt"/>
+          <Item Value="UpdatedAt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="OrderForRestaurantForUserIterator" id="OrderForRestaurantForUser">
+      <nodeDefinition DefName="model.services.views.G3OrdersVO" Name="OrderForRestaurantForUser0">
+        <AttrNames>
+          <Item Value="OrderId"/>
+          <Item Value="CustomerId"/>
+          <Item Value="DeliveryAgentId"/>
+          <Item Value="OrderStatus"/>
+          <Item Value="PaymentStatus"/>
+          <Item Value="CouponId"/>
+          <Item Value="TotalAmount"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="G3PaymentsVO"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="model.services.views.G3PaymentsVO">
+        <AttrNames>
+          <Item Value="PaymentMethod"/>
+          <Item Value="Amount"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="OrderForRestaurantForUserIterator" StaticList="false" Uses="LOV_OrderId" id="OrderId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="OrderForRestaurantForUserIterator" ListOperMode="navigation"
+          ListIter="OrderForRestaurantForUserIterator" id="OrderForRestaurantForUser1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="OrderId"/>
+      </AttrNames>
+    </list>
   </bindings>
 </pageDefinition>

@@ -87,18 +87,239 @@
                     </af:panelFormLayout>
                 </af:showDetailItem>
                 <af:showDetailItem id="menu" text="Menu"/>
-                <af:showDetailItem id="order_status" text="Order Status"/>
-                <af:showDetailItem id="reservation" text="Reservation"/>
+                <af:showDetailItem id="order_status" text="Order Status">
+                    <af:table value="#{bindings.OrderForRestaurantForUser.collectionModel}" var="row"
+                              rows="#{bindings.OrderForRestaurantForUser.rangeSize}"
+                              emptyText="#{bindings.OrderForRestaurantForUser.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.OrderForRestaurantForUser.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.OrderForRestaurantForUser.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.OrderForRestaurantForUser.rangeSize}"
+                              filterModel="#{bindings.OrderForRestaurantForUserQuery.queryDescriptor}"
+                              filterVisible="true"
+                              queryListener="#{bindings.OrderForRestaurantForUserQuery.processQuery}" varStatus="vs"
+                              id="t2">
+                        <af:column sortProperty="#{bindings.OrderForRestaurantForUser.hints.OrderId.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.OrderForRestaurantForUser.hints.OrderId.label}" id="c9">
+                            <af:selectOneChoice value="#{row.bindings.OrderId.inputValue}"
+                                                label="#{row.bindings.OrderId.label}"
+                                                required="#{bindings.OrderForRestaurantForUser.hints.OrderId.mandatory}"
+                                                shortDesc="#{bindings.OrderForRestaurantForUser.hints.OrderId.tooltip}"
+                                                readOnly="true" id="soc2">
+                                <f:selectItems value="#{row.bindings.OrderId.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.OrderId.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OrderForRestaurantForUser.hints.CustomerId.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.OrderForRestaurantForUser.hints.CustomerId.label}" id="c10">
+                            <af:outputText value="#{row.CustomerId}"
+                                           shortDesc="#{bindings.OrderForRestaurantForUser.hints.CustomerId.tooltip}"
+                                           id="ot9">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.OrderForRestaurantForUser.hints.CustomerId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OrderForRestaurantForUser.hints.DeliveryAgentId.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.OrderForRestaurantForUser.hints.DeliveryAgentId.label}"
+                                   id="c11">
+                            <af:outputText value="#{row.DeliveryAgentId}"
+                                           shortDesc="#{bindings.OrderForRestaurantForUser.hints.DeliveryAgentId.tooltip}"
+                                           id="ot10">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.OrderForRestaurantForUser.hints.DeliveryAgentId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OrderForRestaurantForUser.hints.OrderStatus.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.OrderForRestaurantForUser.hints.OrderStatus.label}" id="c12">
+                            <af:outputText value="#{row.OrderStatus}"
+                                           shortDesc="#{bindings.OrderForRestaurantForUser.hints.OrderStatus.tooltip}"
+                                           id="ot11"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OrderForRestaurantForUser.hints.PaymentStatus.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.OrderForRestaurantForUser.hints.PaymentStatus.label}"
+                                   id="c13">
+                            <af:outputText value="#{row.PaymentStatus}"
+                                           shortDesc="#{bindings.OrderForRestaurantForUser.hints.PaymentStatus.tooltip}"
+                                           id="ot12"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OrderForRestaurantForUser.hints.CouponId.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.OrderForRestaurantForUser.hints.CouponId.label}" id="c14">
+                            <af:outputText value="#{row.CouponId}"
+                                           shortDesc="#{bindings.OrderForRestaurantForUser.hints.CouponId.tooltip}"
+                                           id="ot13">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.OrderForRestaurantForUser.hints.CouponId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OrderForRestaurantForUser.hints.TotalAmount.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.OrderForRestaurantForUser.hints.TotalAmount.label}" id="c15">
+                            <af:outputText value="#{row.TotalAmount}"
+                                           shortDesc="#{bindings.OrderForRestaurantForUser.hints.TotalAmount.tooltip}"
+                                           id="ot14">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.OrderForRestaurantForUser.hints.TotalAmount.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OrderForRestaurantForUser.hints.G3PaymentsVO.PaymentMethod.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.OrderForRestaurantForUser.hints.G3PaymentsVO.PaymentMethod.label}"
+                                   id="c16">
+                            <af:outputText value="#{row.G3PaymentsVO.bindings.PaymentMethod.inputValue}"
+                                           shortDesc="#{bindings.OrderForRestaurantForUser.hints.G3PaymentsVO.PaymentMethod.tooltip}"
+                                           rendered="#{row.G3PaymentsVO != null}" id="ot15"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OrderForRestaurantForUser.hints.G3PaymentsVO.Amount.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.OrderForRestaurantForUser.hints.G3PaymentsVO.Amount.label}"
+                                   id="c17">
+                            <af:outputText value="#{row.G3PaymentsVO.bindings.Amount.inputValue}"
+                                           shortDesc="#{bindings.OrderForRestaurantForUser.hints.G3PaymentsVO.Amount.tooltip}"
+                                           rendered="#{row.G3PaymentsVO != null}" id="ot16">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.OrderForRestaurantForUser.hints.G3PaymentsVO.Amount.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OrderForRestaurantForUser.hints.G3PaymentsVO.Status.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.OrderForRestaurantForUser.hints.G3PaymentsVO.Status.label}"
+                                   id="c18">
+                            <af:outputText value="#{row.G3PaymentsVO.bindings.Status.inputValue}"
+                                           shortDesc="#{bindings.OrderForRestaurantForUser.hints.G3PaymentsVO.Status.tooltip}"
+                                           rendered="#{row.G3PaymentsVO != null}" id="ot17"/>
+                        </af:column>
+                    </af:table>
+                </af:showDetailItem>
+                <af:showDetailItem id="reservation" text="Reservation">
+                    <af:table value="#{bindings.ReservationForRestaurantForUser.collectionModel}" var="row"
+                              rows="#{bindings.ReservationForRestaurantForUser.rangeSize}"
+                              emptyText="#{bindings.ReservationForRestaurantForUser.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.ReservationForRestaurantForUser.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.ReservationForRestaurantForUser.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.ReservationForRestaurantForUser.rangeSize}"
+                              filterModel="#{bindings.ReservationForRestaurantForUserQuery.queryDescriptor}"
+                              filterVisible="true"
+                              queryListener="#{bindings.ReservationForRestaurantForUserQuery.processQuery}"
+                              varStatus="vs" id="t1">
+                        <af:column sortProperty="#{bindings.ReservationForRestaurantForUser.hints.ReservationId.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.ReservationForRestaurantForUser.hints.ReservationId.label}"
+                                   id="c1">
+                            <af:outputText value="#{row.ReservationId}"
+                                           shortDesc="#{bindings.ReservationForRestaurantForUser.hints.ReservationId.tooltip}"
+                                           id="ot1">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ReservationForRestaurantForUser.hints.ReservationId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ReservationForRestaurantForUser.hints.CustomerId.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.ReservationForRestaurantForUser.hints.CustomerId.label}"
+                                   id="c2">
+                            <af:outputText value="#{row.CustomerId}"
+                                           shortDesc="#{bindings.ReservationForRestaurantForUser.hints.CustomerId.tooltip}"
+                                           id="ot2">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ReservationForRestaurantForUser.hints.CustomerId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ReservationForRestaurantForUser.hints.RestaurantId.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.ReservationForRestaurantForUser.hints.RestaurantId.label}"
+                                   id="c3">
+                            <af:outputText value="#{row.RestaurantId}"
+                                           shortDesc="#{bindings.ReservationForRestaurantForUser.hints.RestaurantId.tooltip}"
+                                           id="ot3">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ReservationForRestaurantForUser.hints.RestaurantId.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ReservationForRestaurantForUser.hints.TableSize.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.ReservationForRestaurantForUser.hints.TableSize.label}"
+                                   id="c4">
+                            <af:outputText value="#{row.TableSize}"
+                                           shortDesc="#{bindings.ReservationForRestaurantForUser.hints.TableSize.tooltip}"
+                                           id="ot4">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.ReservationForRestaurantForUser.hints.TableSize.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ReservationForRestaurantForUser.hints.Status.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.ReservationForRestaurantForUser.hints.Status.label}" id="c5">
+                            <af:outputText value="#{row.Status}"
+                                           shortDesc="#{bindings.ReservationForRestaurantForUser.hints.Status.tooltip}"
+                                           id="ot5"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ReservationForRestaurantForUser.hints.ReservationTime.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.ReservationForRestaurantForUser.hints.ReservationTime.label}"
+                                   id="c6">
+                            <f:facet name="filter">
+                                <af:inputDate value="#{bindings.ReservationForRestaurantForUserQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.ReservationTime.value}"
+                                              id="id3">
+                                    <af:convertDateTime pattern="#{bindings.ReservationForRestaurantForUser.hints.ReservationTime.format}"/>
+                                </af:inputDate>
+                            </f:facet>
+                            <af:outputText value="#{row.ReservationTime}"
+                                           shortDesc="#{bindings.ReservationForRestaurantForUser.hints.ReservationTime.tooltip}"
+                                           id="ot6">
+                                <af:convertDateTime pattern="#{bindings.ReservationForRestaurantForUser.hints.ReservationTime.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ReservationForRestaurantForUser.hints.CreatedAt.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.ReservationForRestaurantForUser.hints.CreatedAt.label}"
+                                   id="c7">
+                            <f:facet name="filter">
+                                <af:inputDate value="#{bindings.ReservationForRestaurantForUserQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.CreatedAt.value}"
+                                              id="id4">
+                                    <af:convertDateTime pattern="#{bindings.ReservationForRestaurantForUser.hints.CreatedAt.format}"/>
+                                </af:inputDate>
+                            </f:facet>
+                            <af:outputText value="#{row.CreatedAt}"
+                                           shortDesc="#{bindings.ReservationForRestaurantForUser.hints.CreatedAt.tooltip}"
+                                           id="ot7">
+                                <af:convertDateTime pattern="#{bindings.ReservationForRestaurantForUser.hints.CreatedAt.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.ReservationForRestaurantForUser.hints.UpdatedAt.name}"
+                                   filterable="true" sortable="true"
+                                   headerText="#{bindings.ReservationForRestaurantForUser.hints.UpdatedAt.label}"
+                                   id="c8">
+                            <f:facet name="filter">
+                                <af:inputDate value="#{bindings.ReservationForRestaurantForUserQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.UpdatedAt.value}"
+                                              id="id5">
+                                    <af:convertDateTime pattern="#{bindings.ReservationForRestaurantForUser.hints.UpdatedAt.format}"/>
+                                </af:inputDate>
+                            </f:facet>
+                            <af:outputText value="#{row.UpdatedAt}"
+                                           shortDesc="#{bindings.ReservationForRestaurantForUser.hints.UpdatedAt.tooltip}"
+                                           id="ot8">
+                                <af:convertDateTime pattern="#{bindings.ReservationForRestaurantForUser.hints.UpdatedAt.format}"/>
+                            </af:outputText>
+                        </af:column>
+                    </af:table>
+                </af:showDetailItem>
                 <af:showDetailItem id="delivery_agent" text="Delivery Agent">
                     <af:panelGridLayout id="pgl1">
                         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
                             <af:gridCell marginStart="5px" width="34%" id="gc1">
                                 <af:selectOneChoice value="#{assignDeliveryAgent.order_id}"
-                                                    label="#{bindings.G3OrdersVO.label}"
-                                                    required="#{bindings.G3OrdersVO.hints.mandatory}"
-                                                    shortDesc="#{bindings.G3OrdersVO.hints.tooltip}" id="soc1">
-                                    <f:selectItems value="#{bindings.G3OrdersVO.items}" id="si1"/>
-                                    <f:validator binding="#{bindings.G3OrdersVO.validator}"/>
+                                                    label="#{bindings.OrderForRestaurantForUser1.label}"
+                                                    required="#{bindings.OrderForRestaurantForUser1.hints.mandatory}"
+                                                    shortDesc="#{bindings.OrderForRestaurantForUser1.hints.tooltip}"
+                                                    id="soc1">
+                                    <f:selectItems value="#{bindings.OrderForRestaurantForUser1.items}" id="si1"/>
+                                    <f:validator binding="#{bindings.OrderForRestaurantForUser1.validator}"/>
                                 </af:selectOneChoice>
                             </af:gridCell>
                             <af:gridCell marginStart="5px" width="33%" id="gc2">
