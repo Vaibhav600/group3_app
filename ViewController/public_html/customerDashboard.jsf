@@ -1,11 +1,72 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-        xmlns:c="http://java.sun.com/jsp/jstl/core">
-    <c:set var="viewcontrollerBundle" value="#{adfBundle['view.ViewControllerBundle']}"/>
-    <af:document title="user_dashboard.jsf" id="d1">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="untitled2.jsf" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
-            <af:message id="m1" message="#{viewcontrollerBundle.USER_DASHBOARD}"/>
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr1"/>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                        <af:gridCell width="80%" halign="center" valign="stretch" id="gc2">
+                            <!-- Header -->
+                            <af:panelGroupLayout layout="vertical" id="pgl2">
+                                <af:panelHeader text="G3RestaurantsEO" id="ph1">
+                                    <af:query id="qryId1" headerText="Search" disclosed="true"
+                                              value="#{bindings.G3RestaurantsVOCriteriaQuery.queryDescriptor}"
+                                              model="#{bindings.G3RestaurantsVOCriteriaQuery.queryModel}"
+                                              queryListener="#{bindings.G3RestaurantsVOCriteriaQuery.processQuery}"
+                                              queryOperationListener="#{bindings.G3RestaurantsVOCriteriaQuery.processQueryOperation}"/>
+                                </af:panelHeader>
+                            </af:panelGroupLayout>
+                        </af:gridCell>
+                        <af:gridRow id="gr3">
+                            <af:gridCell id="gc3"/>
+                        </af:gridRow>
+                        <af:panelGroupLayout layout="vertical" id="pgl3">
+                            <af:panelHeader text="G3RestaurantsEO" id="ph2">
+                                <af:query id="qryId2" headerText="Search" disclosed="true"
+                                          value="#{bindings.G3RestaurantsVOCriteriaQuery1.queryDescriptor}"
+                                          model="#{bindings.G3RestaurantsVOCriteriaQuery1.queryModel}"
+                                          queryListener="#{bindings.G3RestaurantsVOCriteriaQuery1.processQuery}"
+                                          queryOperationListener="#{bindings.G3RestaurantsVOCriteriaQuery1.processQueryOperation}"/>
+                            </af:panelHeader>
+                        </af:panelGroupLayout>
+                        <af:listView value="#{bindings.G3RestaurantsVO.collectionModel}" var="item"
+                                     emptyText="#{bindings.G3RestaurantsVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                     fetchSize="#{bindings.G3RestaurantsVO.rangeSize}" id="lv1"
+                                     partialTriggers="::qryId1">
+                            <af:listItem id="li1">
+                                <af:panelGroupLayout layout="horizontal" id="pgl4" partialTriggers="::qryId2">
+                                    <f:facet name="separator">
+                                        <af:spacer width="10" id="s1"/>
+                                    </f:facet>
+                                    <af:outputFormatted value="#{item.bindings.RestaurantId.inputValue}" id="of1">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.G3RestaurantsVO.hints.RestaurantId.format}"/>
+                                    </af:outputFormatted>
+                                    <af:outputFormatted value="#{item.bindings.OwnerId.inputValue}" id="of2">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.G3RestaurantsVO.hints.OwnerId.format}"/>
+                                    </af:outputFormatted>
+                                    <af:outputFormatted value="#{item.bindings.Name.inputValue}" id="of3"/>
+                                    <af:outputFormatted value="#{item.bindings.Address.inputValue}" id="of4"/>
+                                    <af:outputFormatted value="#{item.bindings.Phone.inputValue}" id="of5">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.G3RestaurantsVO.hints.Phone.format}"/>
+                                    </af:outputFormatted>
+                                    <af:outputFormatted value="#{item.bindings.AvailableSeats.inputValue}" id="of6">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.G3RestaurantsVO.hints.AvailableSeats.format}"/>
+                                    </af:outputFormatted>
+                                    <af:outputFormatted value="#{item.bindings.Status.inputValue}" id="of7"/>
+                                </af:panelGroupLayout>
+                            </af:listItem>
+                        </af:listView>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
         </af:form>
     </af:document>
 </f:view>

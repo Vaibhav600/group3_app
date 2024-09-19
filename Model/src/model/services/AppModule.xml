@@ -4,7 +4,7 @@
 <AppModule
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="AppModule"
-  Version="12.2.1.22.48"
+  Version="12.2.1.11.57"
   InheritPersonalization="merge"
   ClearCacheOnRollback="true">
   <ViewUsage
@@ -16,7 +16,11 @@
   </ViewUsage>
   <ViewUsage
     Name="G3RestaurantsVO"
-    ViewObjectName="model.services.views.G3RestaurantsVO"/>
+    ViewObjectName="model.services.views.G3RestaurantsVO">
+    <ViewCriteriaUsage
+      Name="G3RestaurantsVOCriteria"
+      FullName="model.services.views.G3RestaurantsVO.G3RestaurantsVOCriteria"/>
+  </ViewUsage>
   <ViewUsage
     Name="OrderForRestaurant"
     ViewObjectName="model.services.views.G3OrdersVO">
