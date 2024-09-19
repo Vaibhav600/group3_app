@@ -61,6 +61,15 @@
   <ViewUsage
     Name="RatingsForRestaurantForUserVO"
     ViewObjectName="model.services.views.RestaurantRatingVO"/>
+  <ViewUsage
+    Name="G3RestaurantRatingVO"
+    ViewObjectName="model.services.views.RestaurantRatingVO"/>
+  <ViewUsage
+    Name="G3RestaurantReviewVO"
+    ViewObjectName="model.services.views.RestaurantReviewVO"/>
+  <ViewUsage
+    Name="ReviewForRestaurantForUserVO"
+    ViewObjectName="model.services.views.RestaurantReviewVO"/>
   <ViewLinkUsage
     Name="OrderRestaurantViewLink"
     ViewLinkObjectName="model.services.link.OrderRestaurantViewLink"
@@ -110,9 +119,15 @@
     DstViewUsageName="model.services.AppModule.CouponsForRestaurantForUserVO"
     Reversed="false"/>
   <ViewLinkUsage
-    Name="RatingRestaurantViewLink1"
+    Name="RatingsForRestaurantForUserLink"
     ViewLinkObjectName="model.services.link.RatingRestaurantViewLink"
     SrcViewUsageName="model.services.AppModule.RestaurantForUser"
     DstViewUsageName="model.services.AppModule.RatingsForRestaurantForUserVO"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ReviewForRestaurantForUserViewLink"
+    ViewLinkObjectName="model.services.link.RestaurantReviewViewLink"
+    SrcViewUsageName="model.services.AppModule.RestaurantForUser"
+    DstViewUsageName="model.services.AppModule.ReviewForRestaurantForUserVO"
     Reversed="false"/>
 </AppModule>

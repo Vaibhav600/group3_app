@@ -193,6 +193,11 @@
     ViewLink="model.services.link.RatingRestaurantViewLink"
     Type="oracle.jbo.Row"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="RestaurantReviewVO"
+    ViewLink="model.services.link.RestaurantReviewViewLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
