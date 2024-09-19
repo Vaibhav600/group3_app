@@ -7,13 +7,13 @@
       <property
          name="activityId">superAdminDashboard</property>
       <property
-         name="x">310.4287</property>
+         name="x">258.4287</property>
       <property
          name="start">true</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>superAdminDashboard&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">201.67188</property>
+         name="y">168.53906</property>
       <property
          name="page">/superAdminDashboard.jsf</property>
       <property
@@ -72,7 +72,7 @@
       <property
          name="fromOutcome">goToEditRestaurant</property>
       <property
-         name="sdm:polyPoints">T44,306.9287,143.45874,473.24353,53.902344,L46</property>
+         name="sdm:polyPoints">R38,299.4287,157.97266,473.07214,53.902344,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -82,7 +82,7 @@
       <property
          name="fromOutcome">goToAddRestaurant</property>
       <property
-         name="sdm:polyPoints">R46,352.00174,198.10547,567.0,233.63672,L46</property>
+         name="sdm:polyPoints">R54,300.22488,171.97266,567.0,233.63672,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -92,7 +92,7 @@
       <property
          name="fromOutcome">goToSuperAdminDashboard</property>
       <property
-         name="sdm:polyPoints">L54,566.4262,240.63672,351.4287,205.10547,R54</property>
+         name="sdm:polyPoints">L54,566.2027,240.63672,299.4287,178.97266,R62</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -102,7 +102,7 @@
       <property
          name="fromOutcome">goToSuperAdminDashboard</property>
       <property
-         name="sdm:polyPoints">L54,475.0,60.902344,313.9287,147.60547,T56</property>
+         name="sdm:polyPoints">L54,475.0,60.902344,301.34747,164.97266,R46</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall13">
@@ -125,7 +125,7 @@
       <property
          name="fromOutcome">goToRestaurantDetails</property>
       <property
-         name="sdm:polyPoints">B50,310.4287,255.60547,385.55176,360.23438,T50</property>
+         name="sdm:polyPoints">B50,258.4287,222.47266,385.55176,360.23438,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
