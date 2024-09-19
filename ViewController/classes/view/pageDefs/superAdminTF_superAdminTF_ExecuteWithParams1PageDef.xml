@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="superAdminTF_superAdminTF_ExecuteWithParams1PageDef" Package="view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="G3UsersVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3UsersVOIterator"
+              />
+  </executables>
+  <bindings>
+    <action IterBinding="G3UsersVOIterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="bOwnerId" NDType="oracle.jbo.domain.Number"/>
+      <NamedData NDName="bindingOwner" NDValue="#{pageFlowScope.selectedOwnerId}" NDType="oracle.jbo.domain.Number"/>
+    </action>
+  </bindings>
+</pageDefinition>
