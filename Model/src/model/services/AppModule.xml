@@ -35,7 +35,14 @@
     ViewObjectName="model.services.views.G3DeliveryAgentVO"/>
   <ViewUsage
     Name="G3OrdersVO"
-    ViewObjectName="model.services.views.G3OrdersVO"/>
+    ViewObjectName="model.services.views.G3OrdersVO">
+    <ViewCriteriaUsage
+      Name="getOrderByIDVC"
+      FullName="model.services.views.G3OrdersVO.getOrderByIDVC"/>
+    <ViewCriteriaUsage
+      Name="searchOrderByRestaurantIDVC"
+      FullName="model.services.views.G3OrdersVO.searchOrderByRestaurantIDVC"/>
+  </ViewUsage>
   <ViewUsage
     Name="OrderForRestaurantForUser"
     ViewObjectName="model.services.views.G3OrdersVO"/>

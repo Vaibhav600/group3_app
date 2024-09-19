@@ -25,23 +25,30 @@ public class AssignDeliveryAgent {
     public AssignDeliveryAgent() {
         super();
     }
+    public ApplicationModule getApplicationModule() {
+        BindingContext bindingContext = BindingContext.getCurrent();
+        if (bindingContext != null) {
+            DCBindingContainer bindings = (DCBindingContainer) bindingContext.getCurrentBindingsEntry();
+            DCDataControl dataControl = bindings.getDataControl();
+            ApplicationModule am = (ApplicationModule)dataControl.getDataProvider();
+           return am;
+        } 
+        else {
+            System.out.println("BindingContext is null");
+        }
+        return null;
+    }
     public String assignAgent(){
-        System.out.println(order_id);
-        System.out.println(agent_id);
         try{
-            BindingContext context = BindingContext.getCurrent();
-            DCBindingContainer bindings = (DCBindingContainer) context.getCurrentBindingsEntry();
-            DCDataControl dc = bindings.getDataControl();
-            ApplicationModule am = (ApplicationModule) dc.getDataProvider();
-            
+            ApplicationModule am = getApplicationModule();
             ViewObject orders_vo = am.findViewObject("G3OrdersVO");
             
             orders_vo.setNamedWhereClauseParam("bOrderId",order_id);
             orders_vo.executeQuery();
             
             Row row = orders_vo.first();
+
             row.setAttribute("DeliveryAgentId", agent_id);
-            
             am.getTransaction().commit();
         }
         catch(Exception e){
