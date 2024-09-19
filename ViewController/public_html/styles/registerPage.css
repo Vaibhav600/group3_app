@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+
+/* Ensure the form is centered vertically and horizontally */
+html, body {
+    height: 100%;
+    margin: 0;
+    
+    background-color: #f0f2f5; /* Subtle background color */
+    font-family: Arial, sans-serif; /* Use a clean font */
+}
+
+/* Style the form container */
+.formLayout {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    border: 1px solid #e0e0e0; /* Soft border */
+    text-align: center; /* Center form content */
+}
+
+/* Style the input fields */
+.af_inputText, .af_inputTextSecret {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Smooth border transition */
+}
+
+/* Change border color when input is focused */
+.af_inputText:focus, .af_inputTextSecret:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.2); /* Green shadow on focus */
+}
+
+/* Register button styling */
+.registerButton {
+    width: 100%;
+    padding: 12px 15px;
+    color: #C74634;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+
+
+/* Hover effect for the register button */
+.registerButton:hover {
+    font-size: 16px;
+    color:#C74634;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Hover shadow effect */
+}
+
+/* Disabled button styling */
+.registerButton:disabled {
+    background-color: #ccc;
+    color: #C74634;
+    cursor: not-allowed;
+}
+
