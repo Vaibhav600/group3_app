@@ -2,10 +2,18 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="login.jsf" id="d1">
+    <af:resource type="css" source="/styles/loginPage.css"/>
         <af:form id="f1">
+        <af:panelFormLayout id="pfl1" styleClass="formLayout">
             <af:inputText value="#{loginBean.email}" label="Email"/>
             <af:inputText value="#{loginBean.password}" label="Password" secret="true"/>
-            <af:commandButton text="Login" action="#{loginBean.loginUser}"/>
+            <af:commandButton text="Login" action="#{loginBean.loginUser}" styleClass="loginButton"/>
+            <af:panelGroupLayout>
+           <af:outputText value="Don't have an account? " id="ot1"/>
+<af:link text="Register" id="l1" action="goToRegister"/>
+        </af:panelGroupLayout>
+            </af:panelFormLayout>
+            
         </af:form>
     </af:document>
 </f:view>
