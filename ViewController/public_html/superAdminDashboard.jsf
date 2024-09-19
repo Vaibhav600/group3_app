@@ -65,10 +65,18 @@
                                            shortDesc="#{bindings.G3RestaurantsVO.hints.Status.tooltip}" id="ot6"/>
                         </af:column>
                         <af:column id="c7" headerText="Action">
-                            <af:link text="edit" id="l2" actionListener="#{bindings.setCurrentRowWithKey.execute}">
-                                <af:showPopupBehavior popupId="::edit_popup" triggerType="action"/>
-                            </af:link>
-                        </af:column>
+    <af:panelGroupLayout layout="horizontal" id="actionPanel">
+        <af:link text="edit" id="l2" 
+                 actionListener="#{bindings.setCurrentRowWithKey.execute}">
+            <af:showPopupBehavior popupId="::edit_popup" triggerType="action"/>
+        </af:link>
+        <af:spacer width="20px" height="1px"/>
+        <af:link text="delete" id="deleteLink" 
+                 actionListener="#{bindings.setCurrentRowWithKey.execute}">
+                                    <af:showPopupBehavior popupId="::delete_popup" triggerType="action"/>
+                                </af:link>
+    </af:panelGroupLayout>
+</af:column>
                     </af:table>
                 </af:panelBox>
                 <af:popup childCreation="deferred" autoCancel="disabled" id="edit_popup" contentDelivery="lazyUncached">
@@ -146,6 +154,20 @@
                             </af:inputDate>
                         </af:panelFormLayout>
                         <af:button actionListener="#{bindings.Commit.execute}" text="Commit" id="b2"/>
+                    </af:dialog>
+                </af:popup>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="delete_popup"
+                          contentDelivery="lazyUncached">
+                    <af:dialog id="d3" dialogListener="#{bindings.Delete.execute}" type="none">
+                        <f:facet name="buttonBar"/>
+                            <af:panelFormLayout id="pfl1">
+                                <af:outputText value="Are you sure you want to delete this restaurant?" />
+                                
+                            </af:panelFormLayout>
+                            <af:spacer id="s1" height="2" width="70"/>
+                            <af:button actionListener="#{bindings.Delete.execute}" text="Delete" id="b3"/>
+                            <af:spacer id="s2" height="1" width="16"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Commit" id="b4"/>
                     </af:dialog>
                 </af:popup>
             </af:panelGroupLayout>
