@@ -102,8 +102,6 @@
     </attributeValues>
     <action IterBinding="G3RestaurantsVOIterator" id="CreateWithParams9" RequiresUpdateModel="true"
             Action="createWithParams"/>
-    <action IterBinding="G3RestaurantsVOIterator" id="CreateInsert" RequiresUpdateModel="true"
-            Action="createInsertRow"/>
     <list IterBinding="G3UsersVOIterator" ListOperMode="navigation" ListIter="G3UsersVOIterator" id="G3UsersVO"
           DTSupportsMRU="true" SelectItemValueMode="ListObject">
       <AttrNames>
@@ -135,7 +133,6 @@
         <Item Value="Status"/>
       </AttrNames>
     </attributeValues>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <list IterBinding="G3RestaurantsVOIterator" id="t_owner_id" DTSupportsMRU="true" SelectItemValueMode="ListObject"
           StaticList="false" ListIter="G3UsersVOIterator">
       <AttrNames>
@@ -148,5 +145,6 @@
         <Item Value="Email"/>
       </ListDisplayAttrNames>
     </list>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
   </bindings>
 </pageDefinition>
