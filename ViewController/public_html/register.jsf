@@ -2,11 +2,19 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="register.jsf" id="d1">
-        <af:form id="f1">
-            <af:inputText value="#{registerBean.email}" label="Email"/>
-            <af:inputText value="#{registerBean.password}" label="Password" secret="true"/>
-            <af:inputText value="#{registerBean.confirm_password}" label="Confirm Password" secret="true"/>
-            <af:commandButton text="Register" action="#{registerBean.registerUser}"/>
+    <af:resource type="css" source="/styles/registerPage.css"/>
+    
+        <af:form id="f1">      
+            <af:panelFormLayout id="pfl1" styleClass="formLayout">
+                <af:inputText id="it1" value="#{registerBean.email}" label="Email"/>
+            <af:inputText id="it2" value="#{registerBean.password}" label="Password" secret="true"/>
+            <af:inputText id="it3" value="#{registerBean.confirm_password}" label="Confirm Password" secret="true"/>
+            <af:commandButton id="cb1" text="Register" action="#{registerBean.registerUser}" styleClass="registerButton"/>
+          <af:panelGroupLayout>
+           <af:outputText value="Already have an account? " id="ot1" styleClass="inlineText" />
+<af:link text="Login" id="l1"  styleClass="inlineLink" action="goToLogin"/>
+        </af:panelGroupLayout>
+            </af:panelFormLayout>
         </af:form>
     </af:document>
 </f:view>

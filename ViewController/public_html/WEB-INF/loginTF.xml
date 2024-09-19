@@ -23,6 +23,12 @@
         <id>customerTF</id>
       </task-flow-reference>
     </task-flow-call>
+    <task-flow-call id="registerTF">
+      <task-flow-reference>
+        <document>/WEB-INF/registerTF.xml</document>
+        <id>registerTF</id>
+      </task-flow-reference>
+    </task-flow-call>
     <control-flow-rule id="__1">
       <from-activity-id>login</from-activity-id>
       <control-flow-case id="__5">
@@ -36,6 +42,10 @@
       <control-flow-case id="__8">
         <from-outcome>goToCustomer</from-outcome>
         <to-activity-id>customerTF</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__2">
+        <from-outcome>goToRegister</from-outcome>
+        <to-activity-id>registerTF</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
   </task-flow-definition>
