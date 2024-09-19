@@ -13,5 +13,4 @@
       <NamedData NDName="bindingOwner" NDValue="#{pageFlowScope.selectedOwnerId}" NDType="oracle.jbo.domain.Number"/>
     </action>
   </bindings>
-
 </pageDefinition>
