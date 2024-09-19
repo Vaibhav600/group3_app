@@ -4,7 +4,7 @@
 <AppModule
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="AppModule"
-  Version="12.2.1.11.57"
+  Version="12.2.1.22.48"
   InheritPersonalization="merge"
   ClearCacheOnRollback="true">
   <ViewUsage
@@ -58,6 +58,9 @@
   <ViewUsage
     Name="CouponsForRestaurantForUserVO"
     ViewObjectName="model.services.views.G3CouponsVO"/>
+  <ViewUsage
+    Name="RatingsForRestaurantForUserVO"
+    ViewObjectName="model.services.views.RestaurantRatingVO"/>
   <ViewLinkUsage
     Name="OrderRestaurantViewLink"
     ViewLinkObjectName="model.services.link.OrderRestaurantViewLink"
@@ -105,5 +108,11 @@
     ViewLinkObjectName="model.services.link.CouponRestaurantViewLink"
     SrcViewUsageName="model.services.AppModule.RestaurantForUser"
     DstViewUsageName="model.services.AppModule.CouponsForRestaurantForUserVO"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="RatingRestaurantViewLink1"
+    ViewLinkObjectName="model.services.link.RatingRestaurantViewLink"
+    SrcViewUsageName="model.services.AppModule.RestaurantForUser"
+    DstViewUsageName="model.services.AppModule.RatingsForRestaurantForUserVO"
     Reversed="false"/>
 </AppModule>

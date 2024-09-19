@@ -339,7 +339,27 @@
                 </af:showDetailItem>
                 <af:showDetailItem id="coupon" text="Coupon"/>
                 <af:showDetailItem id="feedback_and_complaint" text="Feedback &amp; Complaints"/>
-                <af:showDetailItem id="reviews" text="Reviews"/>
+                <af:showDetailItem id="reviews" text="Reviews">
+                    <af:panelFormLayout id="pfl2">
+                        <af:panelLabelAndMessage label="#{bindings.RestaurantId.hints.label}" id="plam1">
+                            <af:outputText value="#{bindings.RestaurantId.inputValue}"
+                                           shortDesc="#{bindings.RestaurantId.hints.tooltip}" id="ot18">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.RestaurantId.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.Name.hints.label}" id="plam2">
+                            <af:outputText value="#{bindings.Name.inputValue}"
+                                           shortDesc="#{bindings.Name.hints.tooltip}" id="ot19"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{bindings.AvgRating.hints.label}" id="plam3">
+                            <af:outputText value="#{bindings.AvgRating.inputValue}"
+                                           shortDesc="#{bindings.AvgRating.hints.tooltip}" id="ot20">
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.AvgRating.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                    </af:panelFormLayout>
+                    <af:panelGroupLayout layout="vertical" id="pgl2"/>
+                </af:showDetailItem>
             </af:panelTabbed>
         </af:form>
     </af:document>
