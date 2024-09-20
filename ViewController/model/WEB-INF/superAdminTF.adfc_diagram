@@ -35,21 +35,6 @@
          name="exceptionHandler">false</property>
    </View>
    <View
-      id="View5">
-      <property
-         name="activityId">addRestaurant</property>
-      <property
-         name="x">608.0</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>addRestaurant&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="y">237.20312</property>
-      <property
-         name="page">/addRestaurant.jsf</property>
-      <property
-         name="exceptionHandler">false</property>
-   </View>
-   <View
       id="View6">
       <property
          name="activityId">restaurantDetails</property>
@@ -72,27 +57,7 @@
       <property
          name="fromOutcome">goToEditRestaurant</property>
       <property
-         name="sdm:polyPoints">R38,299.4287,157.97266,473.07214,53.902344,L46</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase8"
-      from="View3"
-      to="View5">
-      <property
-         name="fromOutcome">goToAddRestaurant</property>
-      <property
-         name="sdm:polyPoints">R54,300.22488,171.97266,567.0,233.63672,L46</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase11"
-      from="View5"
-      to="View3">
-      <property
-         name="fromOutcome">goToSuperAdminDashboard</property>
-      <property
-         name="sdm:polyPoints">L54,566.2027,240.63672,299.4287,178.97266,R62</property>
+         name="sdm:polyPoints">R46,299.4287,164.97266,472.96173,53.902344,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -102,7 +67,7 @@
       <property
          name="fromOutcome">goToSuperAdminDashboard</property>
       <property
-         name="sdm:polyPoints">L54,475.0,60.902344,301.34747,164.97266,R46</property>
+         name="sdm:polyPoints">L54,475.0,60.902344,301.457,171.97266,R54</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall13">
@@ -146,7 +111,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>backToSuperAdmin&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  Back&lt;/p></property>
       <property
-         name="y">412.46875</property>
+         name="y">412.40234</property>
       <property
          name="finish">true</property>
       <property
@@ -160,7 +125,7 @@
       <property
          name="fromOutcome">*</property>
       <property
-         name="sdm:polyPoints">R50,698.0,414.13672,832.0,412.40234,L50</property>
+         name="sdm:polyPoints">R50,698.0,414.13672,832.0,412.33594,L50</property>
    </ControlFlowCase>
    <View
       id="View21">
