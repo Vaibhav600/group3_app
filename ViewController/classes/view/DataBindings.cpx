@@ -18,7 +18,7 @@
     <page path="/WEB-INF/superAdminTF.xml#superAdminTF@ExecuteWithParamsOwner"
           usageId="view_superAdminTF_superAdminTF_ExecuteWithParams1PageDef"/>
     <page path="/ownerDashboard.jsf" usageId="view_ownerDashboardPageDef"/>
-    <page path="/untitled2.jsf" usageId="view_untitled2PageDef"/>
+    <page path="/customerDashboard.jsf" usageId="view_untitled2PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_loginPageDef" path="view.pageDefs.loginPageDef"/>
