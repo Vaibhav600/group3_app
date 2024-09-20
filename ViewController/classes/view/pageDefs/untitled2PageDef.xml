@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="untitled2PageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="G3RestaurantsVO" RangeSize="25" DataControl="AppModuleDataControl" id="G3RestaurantsVOIterator"/>
+    <searchRegion Criteria="G3RestaurantsVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="G3RestaurantsVOIterator" id="G3RestaurantsVOCriteriaQuery"/>
+    <searchRegion Criteria="G3RestaurantsVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="G3RestaurantsVOIterator" id="G3RestaurantsVOCriteriaQuery1"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="G3RestaurantsVOIterator" id="G3RestaurantsVO">
+      <nodeDefinition DefName="model.services.views.G3RestaurantsVO" Name="G3RestaurantsVO0">
+        <AttrNames>
+          <Item Value="RestaurantId"/>
+          <Item Value="OwnerId"/>
+          <Item Value="Name"/>
+          <Item Value="Address"/>
+          <Item Value="Phone"/>
+          <Item Value="AvailableSeats"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

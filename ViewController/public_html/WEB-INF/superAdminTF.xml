@@ -12,9 +12,6 @@
       <page>/editRestaurant.jsf</page>
       <input-page-parameter id="__11"></input-page-parameter>
     </view>
-    <view id="addRestaurant">
-      <page>/addRestaurant.jsf</page>
-    </view>
     <view id="restaurantDetails">
       <page>/restaurantDetails.jsf</page>
       <input-page-parameter id="__15">
@@ -56,20 +53,9 @@
         <from-outcome>goToEditRestaurant</from-outcome>
         <to-activity-id>editRestaurant</to-activity-id>
       </control-flow-case>
-      <control-flow-case id="__3">
-        <from-outcome>goToAddRestaurant</from-outcome>
-        <to-activity-id>addRestaurant</to-activity-id>
-      </control-flow-case>
       <control-flow-case id="__12">
         <from-outcome>goToRestaurantDetails</from-outcome>
         <to-activity-id>ExecuteWithParams</to-activity-id>
-      </control-flow-case>
-    </control-flow-rule>
-    <control-flow-rule id="__7">
-      <from-activity-id>addRestaurant</from-activity-id>
-      <control-flow-case id="__8">
-        <from-outcome>goToSuperAdminDashboard</from-outcome>
-        <to-activity-id>superAdminDashboard</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__9">

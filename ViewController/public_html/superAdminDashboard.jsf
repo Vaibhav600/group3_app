@@ -7,7 +7,9 @@
         <af:messages id="m1"/>
         <af:form id="f1">
             <af:toolbar id="t1">
-                <af:button text="#{viewcontrollerBundle.ADD_RESTAURANT}" id="b1" action="goToAddRestaurant"/>
+                <af:button text="#{viewcontrollerBundle.ADD_RESTAURANT}" id="b1" action="goToAddRestaurant">
+                    <af:showPopupBehavior popupId="add_rest_popup"/>
+                </af:button>
             </af:toolbar>
             <af:panelGroupLayout id="pgl1">
                 <af:panelBox text="#{viewcontrollerBundle.RESTAURANTS}" id="pb1">
@@ -18,7 +20,8 @@
                               rowBandingInterval="0"
                               selectedRowKeys="#{bindings.G3RestaurantsVO.collectionModel.selectedRow}"
                               selectionListener="#{bindings.G3RestaurantsVO.collectionModel.makeCurrent}"
-                              rowSelection="single" fetchSize="#{bindings.G3RestaurantsVO.rangeSize}" id="t2">
+                              rowSelection="single" fetchSize="#{bindings.G3RestaurantsVO.rangeSize}" id="t2"
+                              partialTriggers="::b3">
                         <af:column sortProperty="#{bindings.G3RestaurantsVO.hints.RestaurantId.name}" sortable="true"
                                    headerText="#{bindings.G3RestaurantsVO.hints.RestaurantId.label}" id="c1">
                             <af:link id="l1" action="goToRestaurantDetails">
@@ -171,6 +174,58 @@
                     </af:dialog>
                 </af:popup>
             </af:panelGroupLayout>
+            <af:popup childCreation="deferred" autoCancel="disabled" id="add_rest_popup">
+                <af:panelWindow id="pw1">
+                    <af:panelFormLayout id="pfl1">
+                        <af:selectOneChoice value="#{addRestaurantBean.owner_id}" label="Owner ID"
+                                            required="#{bindings.G3UsersVO.hints.mandatory}"
+                                            shortDesc="#{bindings.G3UsersVO.hints.tooltip}" id="soc2">
+                            <f:selectItems value="#{bindings.G3UsersVO.items}" id="si2"/>
+                            <f:validator binding="#{bindings.G3UsersVO.validator}"/>
+                        </af:selectOneChoice>
+                        <af:inputText value="#{addRestaurantBean.name}" label="Restaurant Name"
+                                      required="#{bindings.Name1.hints.mandatory}"
+                                      columns="#{bindings.Name1.hints.displayWidth}"
+                                      maximumLength="#{bindings.Name1.hints.precision}"
+                                      shortDesc="#{bindings.Name1.hints.tooltip}" id="it8">
+                            <f:validator binding="#{bindings.Name1.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{addRestaurantBean.address}" label="Address"
+                                      required="#{bindings.Address1.hints.mandatory}"
+                                      columns="#{bindings.Address1.hints.displayWidth}"
+                                      maximumLength="#{bindings.Address1.hints.precision}"
+                                      shortDesc="#{bindings.Address1.hints.tooltip}" id="it9">
+                            <f:validator binding="#{bindings.Address1.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{addRestaurantBean.phone}" label="Phone Number"
+                                      required="#{bindings.Phone1.hints.mandatory}"
+                                      columns="#{bindings.Phone1.hints.displayWidth}"
+                                      maximumLength="#{bindings.Phone1.hints.precision}"
+                                      shortDesc="#{bindings.Phone1.hints.tooltip}" id="it10">
+                            <f:validator binding="#{bindings.Phone1.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.Phone1.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{addRestaurantBean.available_seats}"
+                                      label="Available Seats"
+                                      required="#{bindings.AvailableSeats1.hints.mandatory}"
+                                      columns="#{bindings.AvailableSeats1.hints.displayWidth}"
+                                      maximumLength="#{bindings.AvailableSeats1.hints.precision}"
+                                      shortDesc="#{bindings.AvailableSeats1.hints.tooltip}" id="it11">
+                            <f:validator binding="#{bindings.AvailableSeats1.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.AvailableSeats1.format}"/>
+                        </af:inputText>
+                        <af:inputText value="#{addRestaurantBean.status}" label="Status"
+                                      required="#{bindings.Status1.hints.mandatory}"
+                                      columns="#{bindings.Status1.hints.displayWidth}"
+                                      maximumLength="#{bindings.Status1.hints.precision}"
+                                      shortDesc="#{bindings.Status1.hints.tooltip}" id="it12">
+                            <f:validator binding="#{bindings.Status1.validator}"/>
+                        </af:inputText>
+                        <af:button text="add" disabled="#{!bindings.CreateWithParams15.enabled}" id="b3"
+                                   action="#{addRestaurantBean.addRestaurant}"/>
+                    </af:panelFormLayout>
+                </af:panelWindow>
+            </af:popup>
         </af:form>
     </af:document>
 </f:view>
