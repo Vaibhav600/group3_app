@@ -70,6 +70,9 @@
   <ViewUsage
     Name="ReviewForRestaurantForUserVO"
     ViewObjectName="model.services.views.RestaurantReviewVO"/>
+  <ViewUsage
+    Name="G3MenuItemsVO"
+    ViewObjectName="model.services.views.G3MenuItemsVO"/>
   <ViewLinkUsage
     Name="OrderRestaurantViewLink"
     ViewLinkObjectName="model.services.link.OrderRestaurantViewLink"
