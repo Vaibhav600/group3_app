@@ -4,7 +4,7 @@
 <AppModule
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="AppModule"
-  Version="12.2.1.11.57"
+  Version="12.2.1.22.48"
   InheritPersonalization="merge"
   ClearCacheOnRollback="true">
   <ViewUsage
@@ -49,6 +49,27 @@
   <ViewUsage
     Name="ReservationForRestaurantForUser"
     ViewObjectName="model.services.views.G3ReservationsVO"/>
+  <ViewUsage
+    Name="MenuItemsForRestaurantForUserVO"
+    ViewObjectName="model.services.views.G3MenuItemsVO"/>
+  <ViewUsage
+    Name="FeedbackForRestaurantForUserVO"
+    ViewObjectName="model.services.views.G3FeedbackVO"/>
+  <ViewUsage
+    Name="CouponsForRestaurantForUserVO"
+    ViewObjectName="model.services.views.G3CouponsVO"/>
+  <ViewUsage
+    Name="RatingsForRestaurantForUserVO"
+    ViewObjectName="model.services.views.RestaurantRatingVO"/>
+  <ViewUsage
+    Name="G3RestaurantRatingVO"
+    ViewObjectName="model.services.views.RestaurantRatingVO"/>
+  <ViewUsage
+    Name="G3RestaurantReviewVO"
+    ViewObjectName="model.services.views.RestaurantReviewVO"/>
+  <ViewUsage
+    Name="ReviewForRestaurantForUserVO"
+    ViewObjectName="model.services.views.RestaurantReviewVO"/>
   <ViewLinkUsage
     Name="OrderRestaurantViewLink"
     ViewLinkObjectName="model.services.link.OrderRestaurantViewLink"
@@ -78,5 +99,35 @@
     ViewLinkObjectName="model.services.link.ReservationRestaurantViewLink"
     SrcViewUsageName="model.services.AppModule.RestaurantForUser"
     DstViewUsageName="model.services.AppModule.ReservationForRestaurantForUser"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="MenuItemsForRestaurantForUserViewLink"
+    ViewLinkObjectName="model.services.link.MenuItemRestaurantViewLink"
+    SrcViewUsageName="model.services.AppModule.RestaurantForUser"
+    DstViewUsageName="model.services.AppModule.MenuItemsForRestaurantForUserVO"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FeedbackForRestaurantForUserViewLink"
+    ViewLinkObjectName="model.services.link.FeedbackRestaurantViewLink"
+    SrcViewUsageName="model.services.AppModule.RestaurantForUser"
+    DstViewUsageName="model.services.AppModule.FeedbackForRestaurantForUserVO"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="CouponsForRestaurantForUserViewLink"
+    ViewLinkObjectName="model.services.link.CouponRestaurantViewLink"
+    SrcViewUsageName="model.services.AppModule.RestaurantForUser"
+    DstViewUsageName="model.services.AppModule.CouponsForRestaurantForUserVO"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="RatingsForRestaurantForUserLink"
+    ViewLinkObjectName="model.services.link.RatingRestaurantViewLink"
+    SrcViewUsageName="model.services.AppModule.RestaurantForUser"
+    DstViewUsageName="model.services.AppModule.RatingsForRestaurantForUserVO"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="ReviewForRestaurantForUserViewLink"
+    ViewLinkObjectName="model.services.link.RestaurantReviewViewLink"
+    SrcViewUsageName="model.services.AppModule.RestaurantForUser"
+    DstViewUsageName="model.services.AppModule.ReviewForRestaurantForUserVO"
     Reversed="false"/>
 </AppModule>

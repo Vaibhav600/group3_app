@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="G3RestaurantsVO"
-  Version="12.2.1.11.57"
+  Version="12.2.1.22.48"
   InheritPersonalization="merge"
   SelectListFlags="1"
   FromListFlags="1"
@@ -181,6 +181,21 @@
   <ViewLinkAccessor
     Name="G3MenuItemsVO"
     ViewLink="model.services.link.MenuItemRestaurantViewLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="G3CouponsVO"
+    ViewLink="model.services.link.CouponRestaurantViewLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="RestaurantRatingVO"
+    ViewLink="model.services.link.RatingRestaurantViewLink"
+    Type="oracle.jbo.Row"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="RestaurantReviewVO"
+    ViewLink="model.services.link.RestaurantReviewViewLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ResourceBundle>

@@ -339,7 +339,88 @@
                 </af:showDetailItem>
                 <af:showDetailItem id="coupon" text="Coupon"/>
                 <af:showDetailItem id="feedback_and_complaint" text="Feedback &amp; Complaints"/>
-                <af:showDetailItem id="reviews" text="Reviews"/>
+                <af:showDetailItem id="reviews" text="Reviews">
+                    <af:panelGroupLayout layout="vertical" id="pgl3">
+                        <af:panelFormLayout id="pfl2">
+                            <af:panelLabelAndMessage label="#{bindings.RestaurantId.hints.label}" id="plam1">
+                                <af:outputText value="#{bindings.RestaurantId.inputValue}"
+                                               shortDesc="#{bindings.RestaurantId.hints.tooltip}" id="ot18">
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.RestaurantId.format}"/>
+                                </af:outputText>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.Name.hints.label}" id="plam2">
+                                <af:outputText value="#{bindings.Name.inputValue}"
+                                               shortDesc="#{bindings.Name.hints.tooltip}" id="ot19"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{bindings.AvgRating.hints.label}" id="plam3">
+                                <af:outputText value="#{bindings.AvgRating.inputValue}"
+                                               shortDesc="#{bindings.AvgRating.hints.tooltip}" id="ot20">
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.AvgRating.format}"/>
+                                </af:outputText>
+                            </af:panelLabelAndMessage>
+                        </af:panelFormLayout>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout layout="vertical" id="pgl4">
+                        <af:spacer id="s1" height="30" rendered="true" inlineStyle="font-size:small;"/>
+                        <af:outputLabel value="Reviews" id="ol1" inlineStyle="font-size:x-large;"/>
+                        <af:spacer id="s2" height="20"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout layout="vertical" id="pgl2" halign="start">
+                        <af:panelGridLayout id="pgl7" dimensionsFrom="parent">
+                            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
+                                <af:gridCell marginStart="10px" width="33%" id="gc7" halign="stretch">
+                                    <af:outputLabel value="Full Name" id="ol2" inlineStyle="font-size:large;"/>
+                                </af:gridCell>
+                                <af:gridCell marginStart="10px" width="33%" id="gc8" halign="stretch">
+                                    <af:outputLabel value="Review" id="ol3" inlineStyle="font-size:large;"/>
+                                </af:gridCell>
+                                <af:gridCell marginStart="10px" width="33%" marginEnd="5px" id="gc9" halign="stretch">
+                                    <af:outputLabel value="Rating" id="ol4" inlineStyle="font-size:large;"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                        <af:listView value="#{bindings.ReviewForRestaurantForUserVO.collectionModel}" var="item"
+                                     emptyText="#{bindings.ReviewForRestaurantForUserVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                     fetchSize="#{bindings.ReviewForRestaurantForUserVO.rangeSize}" id="lv1">
+                            <af:listItem id="li1">
+                                <af:panelGroupLayout layout="horizontal" id="pgl5" halign="default">
+                                    <f:facet name="separator">
+                                        <af:spacer width="10" id="s3"/>
+                                    </f:facet>
+                                    <af:panelGridLayout id="pgl6" dimensionsFrom="parent">
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+                                            <af:gridCell marginStart="5px" width="34%" id="gc4" halign="stretch">
+                                                <af:panelLabelAndMessage label="" id="plam4">
+                                                    <af:outputText value="#{item.FullName}"
+                                                                   shortDesc="#{bindings.ReviewForRestaurantForUserVO.hints.FullName.tooltip}"
+                                                                   id="ot21"/>
+                                                </af:panelLabelAndMessage>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="33%" id="gc5">
+                                                <af:panelLabelAndMessage label="" id="plam5">
+                                                    <af:outputText value="#{item.Review}"
+                                                                   shortDesc="#{bindings.ReviewForRestaurantForUserVO.hints.Review.tooltip}"
+                                                                   id="ot22"/>
+                                                </af:panelLabelAndMessage>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc6"
+                                                         halign="start">
+                                                <af:panelLabelAndMessage label="" id="plam6">
+                                                    <af:outputText value="#{item.Rating}"
+                                                                   shortDesc="#{bindings.ReviewForRestaurantForUserVO.hints.Rating.tooltip}"
+                                                                   id="ot23">
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.ReviewForRestaurantForUserVO.hints.Rating.format}"/>
+                                                    </af:outputText>
+                                                </af:panelLabelAndMessage>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:panelGroupLayout>
+                            </af:listItem>
+                        </af:listView>
+                    </af:panelGroupLayout>
+                </af:showDetailItem>
             </af:panelTabbed>
         </af:form>
     </af:document>

@@ -5,24 +5,11 @@
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="CouponRestaurantViewLink"
   Version="12.2.1.11.57"
-  InheritPersonalization="merge"
-  Where=":Bind_RestaurantId = G3CouponsEO.RESTAURANT_ID">
+  InheritPersonalization="merge">
   <ViewLinkDefEnd
-    Name="RestaurantIdG3CouponsVO"
-    Cardinality="-1"
-    Source="true"
-    Owner="model.services.views.G3CouponsVO">
-    <DesignTime>
-      <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="G3CouponsVO"/>
-    </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.services.views.G3CouponsVO.RestaurantId"/>
-    </AttrArray>
-  </ViewLinkDefEnd>
-  <ViewLinkDefEnd
-    Name="G3RestaurantsVO"
+    Name="G3RestaurantsVO_2"
     Cardinality="1"
+    Source="true"
     Owner="model.services.views.G3RestaurantsVO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
@@ -30,6 +17,18 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.services.views.G3RestaurantsVO.RestaurantId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="G3CouponsVO"
+    Cardinality="-1"
+    Owner="model.services.views.G3CouponsVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="G3CouponsVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.services.views.G3CouponsVO.RestaurantId"/>
     </AttrArray>
   </ViewLinkDefEnd>
 </ViewLink>

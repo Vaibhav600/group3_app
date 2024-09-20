@@ -3,11 +3,17 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="CouponRestaurantViewLink"
-  Version="12.2.1.11.57"
+  Name="RestaurantReviewViewLink"
+  Version="12.2.1.22.48"
   InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.services.link.RestaurantReviewViewLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
   <ViewLinkDefEnd
-    Name="G3RestaurantsVO_2"
+    Name="G3RestaurantsVO"
     Cardinality="1"
     Source="true"
     Owner="model.services.views.G3RestaurantsVO">
@@ -20,15 +26,19 @@
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="G3CouponsVO"
+    Name="RestaurantReviewVO"
     Cardinality="-1"
-    Owner="model.services.views.G3CouponsVO">
+    Owner="model.services.views.RestaurantReviewVO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="G3CouponsVO"/>
+      <Attr Name="_finderName" Value="RestaurantReviewVO"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.services.views.G3CouponsVO.RestaurantId"/>
+      <Item Value="model.services.views.RestaurantReviewVO.RestaurantId"/>
     </AttrArray>
   </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewLink>
